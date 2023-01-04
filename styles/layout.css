@@ -1,0 +1,58 @@
+.layout-header{
+    background-color: rgb(244, 234, 234);
+    color: aliceblue;
+    font-size: 30px;
+    padding: 30px;
+
+
+}
+.layout-Navbar{
+position: absolute;
+width: 342px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: #2A3034;
+};
+.logo{
+    top: 30px;
+}
+.text-Dashboard{
+    top: 140px;
+}
+.text-Templates{
+     top:241px;
+}
+.text-TopicDomains{
+    top:342px;
+}
+.text-ArticleTypes{
+    top:444px;
+}
+.text-flaggedTopics{
+    top:550px;
+}
+
+
+    
+
+.logo,.text-Dashboard,.text-Templates,.text-TopicDomains,.text-ArticleTypes,.text-flaggedTopics{
+position: absolute;
+width: 173px;
+height: 45px;
+left: 86px;
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+color: #FFFFFF;
+};
+
+.Email{
+    color: #0d0d0d;
+}
+
