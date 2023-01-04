@@ -1,19 +1,18 @@
 import Image from 'next/image'
-function FlaggedTopics(){
-    return(
-    <div>
-      <Image src="/writing.png.jpg"
-        alt="Picture of the writing og Admins"
-        
-        width={1098}
-        height={829}
-        
-        background-repeat='no-repeat'
-        background-size='100% 100%'    
 
+
+function FlaggedTopics() {
+  return (
+    <div className="bg-image-wrapper">
+      <Image src="/writing.png.jpg"
+        alt="Picture of the writing of Admins" 
+      
+        layout="fill"
+        
+     
       />
-    <h1>Flagged Topics</h1>
-    </div>
-    );
- }
- export default FlaggedTopics 
+      <div className='text-box'>flagged</div>
+       </div>
+  );
+}
+export default FlaggedTopics 

@@ -1,58 +1,109 @@
 .layout-header{
-    background-color: rgb(244, 234, 234);
-    color: aliceblue;
+    background-color: rgb(248, 247, 247);
+    color: rgb(14, 24, 32);
     font-size: 30px;
     padding: 30px;
+    width: 100%;
+    margin: 0px;
+    border: #0d0d0d;
+    border-bottom-width: medium;
 
 
 }
-.layout-Navbar{
-position: absolute;
-width: 342px;
-height: 1024px;
-left: 0px;
-top: 0px;
 
-background: #2A3034;
-};
-.logo{
+.layout-Navbar {
+    position:absolute;
+    margin: 0px auto;
+    width: 342px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #2A3034;
+}
+
+;
+
+.logo {
     top: 30px;
 }
-.text-Dashboard{
+
+.text-Dashboard {
     top: 140px;
 }
-.text-Templates{
-     top:241px;
-}
-.text-TopicDomains{
-    top:342px;
-}
-.text-ArticleTypes{
-    top:444px;
-}
-.text-flaggedTopics{
-    top:550px;
+
+.text-Templates {
+    top: 241px;
 }
 
+.text-TopicDomains {
+    top: 342px;
+}
 
-    
+.text-ArticleTypes {
+    top: 444px;
+}
 
-.logo,.text-Dashboard,.text-Templates,.text-TopicDomains,.text-ArticleTypes,.text-flaggedTopics{
-position: absolute;
-width: 173px;
-height: 45px;
-left: 86px;
+.text-flaggedTopics {
+    top: 550px;
+}
+
+.text-AssignUserRoles {
+    top: 656px;
+}
+
+.text-GenerateReports {
+    top: 757px;
+}
+
+.text-ArticleApproval {
+    top: 858px;
+}
+
+.logo,
+.text-Dashboard,
+.text-Templates,
+.text-TopicDomains,
+.text-ArticleTypes,
+.text-flaggedTopics,
+.text-AssignUserRoles,
+.text-GenerateReports,
+.text-ArticleApproval {
+    position: absolute;
+    width: 173px;
+    height: 45px;
+    left: 86px;
 
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 29px;
-color: #FFFFFF;
-};
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
 
-.Email{
+;
+
+.Email {
     color: #0d0d0d;
 }
 
+
+.background-image {
+    height: 100vh;
+    width: 1098px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+.bg-image-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
