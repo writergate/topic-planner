@@ -39,3 +39,38 @@ function Navbar() {
 }
 export default Navbar
 
+
+/*const Navbar = () => {
+  return [
+
+    {
+      title: 'Account Settings',
+      icon: DehazeIcon,
+      path: '/Dashboard'
+    },
+    {
+      sectionTitle: 'Pages'
+    },
+    {
+      title: 'Login',
+      icon:  SpeedIcon,
+      path: '/ArticleTypes',
+      openInNewTab: true
+    },
+    {
+      title: 'Register',
+      icon: CreateIcon ,
+      path: '/Templates',
+      openInNewTab: true
+    },
+    {
+      title: 'Error',
+      icon: MenuBookIcon,
+      path: '/flaggedTopics',
+      openInNewTab: true
+    }
+    
+  ]
+}
+
+export default Navbar*/
