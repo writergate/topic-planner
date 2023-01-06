@@ -1,4 +1,5 @@
-import Link from 'next/link'
+
+import { Box } from '@mui/material'
 import Image from 'next/image'
 import { useRouter } from 'next/Router'
 
@@ -12,8 +13,8 @@ function Templates() {
                 alt="Picture of the writing of Admins"
                 layout="fill"
             />
-            <div className='templatesbox'>
-                <button className='CreateTemplateButton' active aria-pressed="true" onClick={() => router.push('/createTemplates')}>
+            <Box className ='templatesbox'>
+                <button className='CreateTemplateButton'  type='button' onClick={() => router.push('/createTemplates')}>
                     Create New Topic Template
                 </button>
 
@@ -21,8 +22,8 @@ function Templates() {
                 <button className='EditTemplateButton'  onClick={() => router.push('/editTemplates')}>
                     Edit Topic Template
                 </button>
-
-            </div>
+</Box>
+            
         </div>
 
 
@@ -31,5 +32,4 @@ function Templates() {
 }
 
 export default Templates
-
 
