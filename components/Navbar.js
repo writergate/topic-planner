@@ -12,14 +12,14 @@ import LayersIcon from '@mui/icons-material/Layers';
 import CheckIcon from '@mui/icons-material/Check'
 
 
-
 function Navbar() {
     return (
-        <nav>
-            <div className="layout-Navbar">
 
-                <h1 className="logo">
-                <DehazeIcon/>Logo</h1>
+        <nav>
+      
+            <div className="layout-Navbar">
+            
+                <h1 className="logo"><DehazeIcon sx={{ "&:hover": { color: "green" } }}/>Logo </h1>
 
                 <h2 className="text-Dashboard">
                 <SpeedIcon/><Link href="/Dashboard">Dashboard</Link></h2>
@@ -48,9 +48,8 @@ export default Navbar
       icon: DehazeIcon,
       path: '/Dashboard'
     },
-    {
-      sectionTitle: 'Pages'
-    },
+    
+    
     {
       title: 'Login',
       icon:  SpeedIcon,
@@ -73,4 +72,5 @@ export default Navbar
   ]
 }
 
-export default Navbar*/
+export default Navbar
+*/
