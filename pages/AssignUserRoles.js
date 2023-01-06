@@ -1,4 +1,4 @@
 function AssignUserRoles(){
-    return <h1>Article Types</h1>
+    return <h1>Ar</h1>
  }
  export default AssignUserRoles
