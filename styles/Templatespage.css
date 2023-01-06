@@ -1,0 +1,55 @@
+
+
+.templatesbox {
+    position: absolute;
+    width: 572px;
+    height: 624px;
+    left: 609px;
+    top: 201px;
+
+    background: rgba(43, 42, 42, 0.58);
+    border-radius: 59px;
+
+}
+
+
+.CreateTemplateButton {
+
+    position: absolute;
+    width: 482px;
+    height: 69px;
+    left: 655px;
+    top: 4px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+    background: #ece7e7;
+    border-radius: 20px;
+}
+
+.EditTemplateButton {
+    position: absolute;
+    width: 482px;
+    height: 69px;
+    left: 655px;
+    top: 552px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    color: #000000;
+
+    background: #ece7e7;
+    border-radius: 20px;
+}
+
+
