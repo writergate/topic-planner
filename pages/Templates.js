@@ -18,7 +18,7 @@ function Templates() {
                 </button>
 
 
-                <button className='EditTemplateButton' onClick={() => router.push('/editTemplates')}>
+                <button className='EditTemplateButton'  onClick={() => router.push('/editTemplates')}>
                     Edit Topic Template
                 </button>
 
