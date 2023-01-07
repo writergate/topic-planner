@@ -6,11 +6,16 @@
     color: #000;
 }*/
 
-.bg-image-wrapper{
+/*.bg-image-wrapper{
     position: fixed;
-    font-family: 'Courier New', Courier, monospace;
-
-}
+    background-image: url('../public/writing.png.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+   
+}*/
 .text-box{
     color: black;
+    align-items: center;
 }

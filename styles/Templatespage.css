@@ -1,7 +1,7 @@
 .templatesBox{
     position: absolute;
     width: 572px;
-    height: 624px;
+    height: 50%;
     left: 609px;
     top: 201px;
 
@@ -65,12 +65,12 @@
     color: #FFFBFB;
 }
 
-/*.bg-image-TemplateWrapper{
+.bg-image-TemplateWrapper{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
 
 
-}*/
+}
 

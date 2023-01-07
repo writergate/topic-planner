@@ -1,14 +1,16 @@
 import Image from 'next/legacy/image'
-
-function FlaggedTopics() {
+import Link from 'next/Link'
+function flaggedTopics() {
   return (
     <div className="bg-image-wrapper">
-      <Image src="/writing.png.jpg"
+
+     <Image src="/writing.png.jpg"
         alt="Picture of the writing of Admins"
         layout="fill"
       />
-      <div className='text-box'>flagged</div>
+      
+      <div className='text-box'>flagged t</div>
     </div>
   );
 }
-export default FlaggedTopics 
+export default flaggedTopics 

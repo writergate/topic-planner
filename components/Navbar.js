@@ -15,31 +15,56 @@ import CheckIcon from '@mui/icons-material/Check'
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Navbar() {
   return (
     <div className="navContainer">
       <div className='logo'>
-        <h2><DehazeIcon />Logo</h2>
+        <h2><DehazeIcon  />Logo</h2>
       </div>
       <div className='wrapper'>
         <ul>
           <li>
-          <SpeedIcon   /><Link href="/Dashboard">Dashboard </Link></li>
-          <li> 
-          <CreateIcon/><Link href="/Templates">Templates</Link></li>
+            <SpeedIcon /><Link href="/Dashboard">Dashboard </Link></li>
           <li>
-          <BadgeIcon/> <Link href="/ArticleTypes">Article Types</Link></li>
+            <CreateIcon /><Link href="/Templates">Templates</Link></li>
           <li>
-          <MenuBookIcon/> <Link href="/TopicDomains">Topic Domains</Link></li>
-          <li> 
-          <InfoIcon/> <Link href="/flaggedTopics">Flagged Topics</Link></li>
-          <li> 
-          <GroupIcon/> <Link href="/AssignUserRoles">Assign User Roles</Link></li>
+            <BadgeIcon /> <Link href="/ArticleTypes">Article Types</Link></li>
           <li>
-          <LayersIcon/> <Link href="/GenerateReports">Generate Reports</Link>
+            <MenuBookIcon /> <Link href="/TopicDomains">Topic Domains</Link></li>
+          <li>
+            <InfoIcon /> <Link href="/flaggedTopics">Flagged Topics</Link></li>
+          <li>
+            <GroupIcon /> <Link href="/AssignUserRoles">Assign User Roles</Link></li>
+          <li>
+            <LayersIcon /> <Link href="/GenerateReports">Generate Reports</Link>
           </li>
           <li>
-          <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
+            <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
           </li>
         </ul>
       </div>
