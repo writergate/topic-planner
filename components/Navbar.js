@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from "react"; //use to track the event
 import Link from "next/Link"
 
 import DehazeIcon from '@mui/icons-material/Dehaze';
@@ -11,90 +12,76 @@ import GroupIcon from '@mui/icons-material/Group';
 import LayersIcon from '@mui/icons-material/Layers';
 import CheckIcon from '@mui/icons-material/Check'
 
+function Navbar() {
+  /*
+    const Navbar = () => {
+      const menuItem=[
+        {
+          title: 'Dashboard',
+          icon:  SpeedIcon ,
+          path: '/Dashboard'
+        },
+        {
+          title: 'Account Settings',
+          icon: CreateIcon,
+          path: '/Templates'
+        },
+        {
+          sectionTitle: 'Pages'
+        },
+        {
+          title: 'Article Types',
+          icon: MenuBookIcon,
+          path: '/ArticleTypes',
+          openInNewTab: true
+        },
+        {
+          title: 'Topic Domains',
+          icon: BadgeIcon,
+          path: '/TopicDomains',
+          openInNewTab: true
+        },
+        
+      ]
+    */
 
-
-import { useState } from "react"; //use to track the event
-
-
-
-
-
-function Navbar(){
-/*
-  const Navbar = () => {
-    const menuItem=[
-      {
-        title: 'Dashboard',
-        icon:  SpeedIcon ,
-        path: '/Dashboard'
-      },
-      {
-        title: 'Account Settings',
-        icon: CreateIcon,
-        path: '/Templates'
-      },
-      {
-        sectionTitle: 'Pages'
-      },
-      {
-        title: 'Article Types',
-        icon: MenuBookIcon,
-        path: '/ArticleTypes',
-        openInNewTab: true
-      },
-      {
-        title: 'Topic Domains',
-        icon: BadgeIcon,
-        path: '/TopicDomains',
-        openInNewTab: true
-      },
-      
-    ]
-  */
-  
-
-
-  const [open, setOpen] = useState(false); //initial state false since button not pressed
-  
-
+  const [openNav, setOpenNav] = useState(false); //initial state false since button not pressed
   return (
 
     <div className="navContainer">
-      <div style={{ width: open ? "300px" : "50px" }} className='wrapper' >
-      
-        <DehazeIcon onClick={() => setOpen(!open)} />
-          <h2 style={{ display: open ? "block" : "none" }} className="logo">Logo</h2>
+      <div style={{ width: openNav ? "300px" : "50px" }} className='wrapper' >
+        <div className='top-section'>
 
-          <div className='wrapper'>
-        
+          <DehazeIcon sx={{ "&:hover": { color: "green", cursor: "pointer" } }} onClick={() => setOpenNav(!openNav)} />
+          <h2 style={{ display: openNav ? "block" : "none" }} className="logo">Logo</h2>
+        </div>
+        <div className='wrapper'>
+
+
           <ul>
-          <li>
-            <SpeedIcon /><Link href="/Dashboard"><a>Dashboard </a></Link></li>
-          <li>
-            <CreateIcon /><Link href="/Templates">Templates</Link></li>
-          <li>
-            <BadgeIcon /> <Link href="/ArticleTypes">Article Types</Link></li>
-          <li>
-            <MenuBookIcon /> <Link href="/TopicDomains">Topic Domains</Link></li>
-          <li>
-            <InfoIcon /> <Link href="/flaggedTopics">Flagged Topics</Link></li>
-          <li>
-            <GroupIcon /> <Link href="/AssignUserRoles">Assign User Roles</Link></li>
-          <li>
-            <LayersIcon /> <Link href="/GenerateReports">Generate Reports</Link>
-          </li>
-          <li>
-            <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
-          </li>
-        </ul>
-
-        
+            <li>
+              <SpeedIcon /><Link href="/Dashboard">Dashboard </Link></li>
+            <li>
+              <CreateIcon /><Link href="/Templates">Templates</Link></li>
+            <li>
+              <BadgeIcon /> <Link href="/ArticleTypes">Article Types</Link></li>
+            <li>
+              <MenuBookIcon /> <Link href="/TopicDomains">Topic Domains</Link></li>
+            <li>
+              <InfoIcon /> <Link href="/flaggedTopics">Flagged Topics</Link></li>
+            <li>
+              <GroupIcon /> <Link href="/AssignUserRoles">Assign User Roles</Link></li>
+            <li>
+              <LayersIcon /> <Link href="/GenerateReports">Generate Reports</Link>
+            </li>
+            <li>
+              <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
+            </li>
+          </ul>
         </div>
       </div>
-     
-      </div>
+    </div>
 
-    
   )
 }
 

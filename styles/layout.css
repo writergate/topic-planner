@@ -238,6 +238,12 @@
     align-items: center;
     padding: 20px 15px;
 }
+.first{
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+
 
 .logo{
     font-size: 25px;
