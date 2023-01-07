@@ -1,10 +1,12 @@
-.templatesbox {
+.templatesBox{
     position: absolute;
     width: 572px;
     height: 624px;
     left: 609px;
     top: 201px;
-    
+
+   
+   
 
 
     background: rgba(96, 94, 99, 0.58);
@@ -62,3 +64,13 @@
     border: 5px solid #FCB955;
     color: #FFFBFB;
 }
+
+/*.bg-image-TemplateWrapper{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+
+
+}*/
+

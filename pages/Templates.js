@@ -8,13 +8,14 @@ function Templates() {
 
     return (
 
-        <div className="bg-image-wrapper">
+        <div className="bg-image-TemplateWrapper">
+            
             <Image src="/templates.png"
                 alt="Picture of the writing of Admins"
                 layout="fill"
             />
 
-            <Box className='templatesbox'>
+            <Box className='templatesBox'> 
                 <button className='CreateTemplateButton' type='button' onClick={() => router.push('/createTemplates')}>
                     Create New Topic Template
                 </button>
@@ -22,7 +23,7 @@ function Templates() {
                 <button className='EditTemplateButton' onClick={() => router.push('/editTemplates')}>
                     Edit Topic Template
                 </button>
-            </Box>
+                </Box>
 
         </div>
 
