@@ -86,8 +86,8 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 
   /* line-height: 1.65;
     overscroll-behavior-y: contain;

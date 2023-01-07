@@ -13,43 +13,63 @@ import CheckIcon from '@mui/icons-material/Check'
 
 
 
+import { useState } from "react"; //use to track the event
 
 
 
 
 
+function Navbar(){
+/*
+  const Navbar = () => {
+    const menuItem=[
+      {
+        title: 'Dashboard',
+        icon:  SpeedIcon ,
+        path: '/Dashboard'
+      },
+      {
+        title: 'Account Settings',
+        icon: CreateIcon,
+        path: '/Templates'
+      },
+      {
+        sectionTitle: 'Pages'
+      },
+      {
+        title: 'Article Types',
+        icon: MenuBookIcon,
+        path: '/ArticleTypes',
+        openInNewTab: true
+      },
+      {
+        title: 'Topic Domains',
+        icon: BadgeIcon,
+        path: '/TopicDomains',
+        openInNewTab: true
+      },
+      
+    ]
+  */
+  
 
 
+  const [open, setOpen] = useState(false); //initial state false since button not pressed
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function Navbar() {
   return (
+
     <div className="navContainer">
-      <div className='logo'>
-        <h2><DehazeIcon  />Logo</h2>
-      </div>
-      <div className='wrapper'>
-        <ul>
+      <div style={{ width: open ? "300px" : "50px" }} className='wrapper' >
+      
+        <DehazeIcon onClick={() => setOpen(!open)} />
+          <h2 style={{ display: open ? "block" : "none" }} className="logo">Logo</h2>
+
+          <div className='wrapper'>
+        
+          <ul>
           <li>
-            <SpeedIcon /><Link href="/Dashboard">Dashboard </Link></li>
+            <SpeedIcon /><Link href="/Dashboard"><a>Dashboard </a></Link></li>
           <li>
             <CreateIcon /><Link href="/Templates">Templates</Link></li>
           <li>
@@ -67,9 +87,14 @@ function Navbar() {
             <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
           </li>
         </ul>
+
+        
+        </div>
+      </div>
+     
       </div>
 
-    </div>
+    
   )
 }
 
