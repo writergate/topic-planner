@@ -6,12 +6,28 @@
     color: #000;
 }*/
 
-.bg-image-wrapper{
+/*.bg-image-wrapper{
     position: fixed;
-    font-family: 'Courier New', Courier, monospace;
-    opacity: 20;
-  
-}
-.text-box{
+    background-image: url('../public/writing.png.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+   
+}*/
+.text-Box{
     color: black;
+    align-items: center;
+    position: absolute;
+    width: 572px;
+    height: 50%;
+    left: 609px;
+    top: 201px;
+
+   
+   
+
+
+    background: rgba(96, 94, 99, 0.58);
+    border-radius: 59px;
 }
