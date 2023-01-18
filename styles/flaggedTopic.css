@@ -15,7 +15,19 @@
     display: flex;
    
 }*/
-.text-box{
+.text-Box{
     color: black;
     align-items: center;
+    position: absolute;
+    width: 572px;
+    height: 50%;
+    left: 609px;
+    top: 201px;
+
+   
+   
+
+
+    background: rgba(96, 94, 99, 0.58);
+    border-radius: 59px;
 }

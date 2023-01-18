@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from "react"; //use to track the event
-import Link from "next/Link"
+import Link from 'next/Link'
+import { NavLink } from "react";
+
 
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import SpeedIcon from '@mui/icons-material/Speed';
@@ -12,42 +14,66 @@ import GroupIcon from '@mui/icons-material/Group';
 import LayersIcon from '@mui/icons-material/Layers';
 import CheckIcon from '@mui/icons-material/Check'
 
+
 function Navbar() {
-  /*
-    const Navbar = () => {
-      const menuItem=[
-        {
-          title: 'Dashboard',
-          icon:  SpeedIcon ,
-          path: '/Dashboard'
-        },
-        {
-          title: 'Account Settings',
-          icon: CreateIcon,
-          path: '/Templates'
-        },
-        {
-          sectionTitle: 'Pages'
-        },
-        {
-          title: 'Article Types',
-          icon: MenuBookIcon,
-          path: '/ArticleTypes',
-          openInNewTab: true
-        },
-        {
-          title: 'Topic Domains',
-          icon: BadgeIcon,
-          path: '/TopicDomains',
-          openInNewTab: true
-        },
+/*
+  const Navbar = () => {
+    const menuItem = [
+      {
+        title: 'Dashboard',
+        icon: SpeedIcon,
+        path: '/Dashboard'
+      },
+      {
+        title: 'Account Settings',
+        icon: CreateIcon,
+        path: '/Templates'
+      },
+      {
+        //sectionTitle: 'Pages'
+      },
+      {
+        title: 'Article Types',
+        icon: MenuBookIcon,
+        path: '/ArticleTypes',
+        //openInNewTab: true
+      },
+      {
+        title: 'Topic Domains',
+        icon: BadgeIcon,
+        path: '/TopicDomains',
+        //openInNewTab: true
+      },
+
+    ]
+*/
+
+    const [openNav, setOpenNav] = useState(false); //initial state false since button not pressed
+    return (
+/*
+      <div className='container'>
+        <div className='sidebar'>
+          <div className='top-section'>
+            <h1 className='logo'>Logo</h1>
+            <div className='bars'>
+              <DehazeIcon/>
+            </div>
+          </div>
+          {
+            menuItem.map((item, index) => (
+              <NavLink to={item.path} key={index} className='link' activeClassName='active'>
+                <div className="icon">{item.icon}</div>
+                <div className="link_text">{item.name}</div>
+              </NavLink>
+            ))
+          }
+        </div>
         
-      ]
-    */
+      </div>
+    )
+  }
 
-  const [openNav, setOpenNav] = useState(false); //initial state false since button not pressed
-  return (
-
+*/
     <div className="navContainer">
       <div style={{ width: openNav ? "300px" : "50px" }} className='wrapper' >
         <div className='top-section'>
@@ -60,7 +86,9 @@ function Navbar() {
 
           <ul>
             <li>
-              <SpeedIcon /><Link href="/Dashboard">Dashboard </Link></li>
+              <SpeedIcon />
+              
+              <Link href="/Dashboard" >Dashboard </Link></li>
             <li>
               <CreateIcon /><Link href="/Templates">Templates</Link></li>
             <li>
@@ -81,11 +109,12 @@ function Navbar() {
         </div>
       </div>
     </div>
-
-  )
+    )
 }
 
 export default Navbar
+
+
 
 
 

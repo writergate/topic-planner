@@ -212,6 +212,8 @@
     color: black;
 }
 */
+
+
 .navContainer{
     position: fixed;
     width: 342px;
@@ -248,12 +250,7 @@
 .logo{
     font-size: 25px;
 }
-/*
-.bars{
-    display: flex;
-    font-size: 25px;
-    margin-left: 30px;
-}*/
+
 .wrapper>ul{
     margin-top:20px;
     text-align:left;
@@ -283,3 +280,21 @@
 }
 
 
+
+
+/* react vide
+.container{
+    display: flex;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+}
+
+.sidebar{
+    background: black;
+    color:white;
+    height: 100vh;
+}
+*/

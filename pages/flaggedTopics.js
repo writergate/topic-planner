@@ -1,5 +1,6 @@
 import Image from 'next/legacy/image'
 import Link from 'next/Link'
+import { Box } from '@mui/material'
 function flaggedTopics() {
   return (
     <div className="bg-image-wrapper">
@@ -8,9 +9,8 @@ function flaggedTopics() {
         alt="Picture of the writing of Admins"
         layout="fill"
       />
-      
-      <div className='text-box'>flagged t</div>
-    </div>
+   <Box className='text-Box'> Flagged Topics</Box>
+   </div>
   );
 }
 export default flaggedTopics 
