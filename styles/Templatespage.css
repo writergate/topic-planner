@@ -1,0 +1,76 @@
+.templatesBox{
+    position: absolute;
+    width: 572px;
+    height: 50%;
+    left: 609px;
+    top: 201px;
+
+   
+   
+
+
+    background: rgba(96, 94, 99, 0.58);
+    border-radius: 59px;
+
+}
+
+
+.CreateTemplateButton {
+
+    position: absolute;
+    width: 482px;
+    height: 69px;
+    left: 46px;
+    top: 206px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+    background: #ece7e7;
+    border-radius: 20px;
+    cursor: pointer;
+
+
+}
+
+.EditTemplateButton {
+    position: absolute;
+    width: 482px;
+    height: 69px;
+    left: 46px;
+    top: 351px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #000000;
+
+    background: #ece7e7;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.CreateTemplateButton:hover,
+.EditTemplateButton:hover {
+    background: #383821;
+    border: 5px solid #FCB955;
+    color: #FFFBFB;
+}
+
+.bg-image-TemplateWrapper{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+
+
+}
+

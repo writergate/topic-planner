@@ -1,4 +1,4 @@
-.layout-header{
+/*.layout-header{
     background-color: rgb(248, 247, 247);
     color: rgb(14, 24, 32);
     font-size: 30px;
@@ -86,6 +86,7 @@
 
 .Email {
     color: #0d0d0d;
+    text-align: right;
 }
 
 
@@ -107,3 +108,193 @@
     width: 100vw;
     height: 100vh;
 }
+*/
+
+/*
+
+.navContainer{
+    position: fixed;
+    width: 342px;
+    height:100%;
+    background: #2A3034;
+    box-shadow:3px 0px 6px 0px rgba(246,246,246,0.75);
+    margin-top: 0ch;
+    top: 0px;
+  
+}
+
+.wrapper{
+    padding: 10px;
+    z-index: 1;
+}
+.logo{
+    padding:10px;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.wrapper>ul{
+    margin-top:20px;
+    text-align:left;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:35px;
+    font-size: 18px;
+    font-weight:bold;
+
+
+}
+
+.wrapper>ul>li{
+    list-style:none;
+    font-size:20px;
+    text-decoration: none;
+    color:white;
+    opacity: 1;
+}
+
+.wrapper>ul>li:hover{
+    color:rgb(236, 236, 231);
+    font-size:22px;
+    transition: 0.2s;
+    opacity: 0.2;
+}
+
+
+@media only screen and (max-width:768px){
+    .navContainer{
+        width:70px;
+    }
+    .logo>h2{
+         opacity:0;
+    }
+    .logo{
+        background: url("../public/writing.png.jpg");
+        width:40px;
+        height:40px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .wrapper>ul{
+        gap:5px;
+    }
+    .wrapper>ul>li:hover{
+        color: red;
+    }
+    .wrapper>ul>li>a{
+        opacity: 0;
+    }
+}
+.headContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+     height: 70px;
+    background-color: rgb(185, 113, 5);
+    margin-left: 342px;
+}
+
+.headWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title{
+    margin-left: 40px;
+    color: black;
+}
+.title>h2{
+    color: black;
+}
+*/
+
+
+.navContainer{
+    position: fixed;
+    width: 342px;
+    height:100%;
+    background-color: none;
+    box-shadow:3px 0px 6px 0px white;
+    margin-top: 0ch;
+    top: 0px;
+    display: flex;
+
+    
+  
+}
+
+.wrapper{
+    background-color: rgb(32, 30, 33);
+    color:white;
+    height: 100vh;
+   
+    z-index: 1;
+}
+.top-section{
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+.first{
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+
+.logo{
+    font-size: 25px;
+}
+
+.wrapper>ul{
+    margin-top:20px;
+    text-align:left;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:35px;
+    font-size: 18px;
+    font-weight:bold;
+
+
+}
+
+.wrapper>ul>li{
+    list-style:none;
+    font-size:20px;
+    text-decoration: none;
+    color:white;
+    opacity: 1;
+}
+
+.wrapper>ul>li:hover{
+    color:rgb(236, 236, 231);
+    font-size:22px;
+    transition: 0.2s;
+    opacity: 0.2;
+}
+
+
+
+
+/* react vide
+.container{
+    display: flex;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+}
+
+.sidebar{
+    background: black;
+    color:white;
+    height: 100vh;
+}
+*/
