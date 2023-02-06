@@ -1,43 +1,53 @@
-import * as React from "react";
-import Box from "@mui/system/Box";
-import Grid from "@mui/system/Unstable_Grid";
-import styled from "@mui/system/styled";
-import { bgcolor, Container } from "@mui/system";
-import { AlignVerticalCenter } from "@mui/icons-material";
-import MuiCard from "@mui/material/Card";
-import { CardContent } from "@mui/material";
-import Typography from '@mui/material/Typography'
+import { Paper, Grid, Typography, Button, TextField } from '@mui/material';
+import Container from '@mui/material/Container'
 
-const Card = styled(MuiCard)(({ theme }) => ({
-  [theme.breakpoints.up("sm")]: { width: "28rem" },
-}));
-
-const Item = styled("div")(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  border: "1px solid",
-  borderColor: theme.palette.mode === "dark" ? "#444d58" : "#ced7e0",
-  padding: theme.spacing(1),
-  borderRadius: "4px",
-  textAlign: "center",
-}));
-
-export default function FullWidthGrid() {
+export default function ContactUs() {
   return (
-    <Container maxWidth='md'>
-    <Card sx={{ zIndex: 1}}>
-      <CardContent>
-        <Box sx={{ flexGrow: 1, bgcolor: "black"}}>
-          <Grid container spacing={2}>
-            <Grid xs={6} md={6}>
-              <Item>xs=6 md=8</Item>
-            </Grid>
-            <Grid xs={6} md={6}>
-              <Item>xs=6 md=4</Item>
-            </Grid>
+
+    <Container>
+      <Paper elevation={4}>
+        <Grid container spacing={2}>
+          <Grid item xs = {12}>
+            <Typography variant="h4" color="primary" align='center'>Contact us</Typography>
           </Grid>
-        </Box>
-      </CardContent>
-    </Card>
+          <Grid item xs ={6} align="center">
+          <img src='https://i.ibb.co/XjFv4h7/5124556.jpg' alt='Contact us' height={500}/><br/>
+          <Typography variant="subtitle1" color="black" align='center'>Image by <a href="https://www.freepik.com/free-vector/flat-design-illustration-customer-support_12982910.htm#query=contact%20us&position=0&from_view=search&track=sph">Freepik</a></Typography>
+          </Grid>
+          <Grid item xs ={6}>
+            <TextField
+              id="name"
+              label="Name"
+              type="text"
+              variant="outlined"
+              margin='normal'
+              required='true'
+              
+            />
+            <br/>
+            <TextField
+              id="email"
+              label="Email"
+              type="email"
+              variant="outlined"
+              margin='normal'
+            />
+            <br/>
+            <TextField
+              id="message"
+              label="Contact message"
+              variant="outlined"
+              margin='normal'
+              multiline='true'
+              rows='10'
+            />
+            <br/>
+            <Button variant="contained" color="primary">
+             Submit 
+            </Button>
+          </Grid>
+        </Grid>
+      </Paper>
     </Container>
   );
 }
