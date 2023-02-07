@@ -71,6 +71,14 @@
 
 html,
 body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background: #FFFFFF;
+
+}
+/*body {
   max-width: 100vw;
   overflow-x: hidden;
   position: relative;
@@ -89,14 +97,14 @@ body {
   width: 100%;
   height: 100%;
 
-  /* line-height: 1.65;
+ line-height: 1.65;
     overscroll-behavior-y: contain;
     position: relative;
     font-size: 100%;
     min-height: 100%;
     max-width: 100vw;
-    margin: 0;*/
-}
+    margin: 0;
+}*/
 
 
 
