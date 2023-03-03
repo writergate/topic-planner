@@ -1,4 +1,4 @@
-import styles from '@/styles/loginlayout.module.css'
+import styles from '../styles/loginlayout.module.css'
 
 export default function LoginLayout({children}){
     return(

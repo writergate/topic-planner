@@ -1,6 +1,6 @@
 import Head from "next/head"
-import LoginLayout from "@/layout/loginlayout"
-import styles from "@/styles/register.module.css";
+import LoginLayout from "../components/loginlayout"
+import styles from "../styles/register.module.css";
 import Link from "next/link";
 
 export default function Register(){
