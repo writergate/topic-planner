@@ -4,13 +4,13 @@ import router, { useRouter } from 'next/router';
 
 function GetRouter(){
 const router = useRouter();
-return router.pathname === '/contactUs' ? false : true;
+return router.pathname === '/contactUs' || '/forgotPassword' ? false : true;
 }
 
 const Layout =({children}) => {
     return ( 
       <div className="content">
-        <Header/>
+         {GetRouter() && <Header/>}
         {children}
        {GetRouter() && <Navbar/>}
       </div>
