@@ -15,6 +15,7 @@ function Home() {
       <a>Admin page</a>  
 
     </div>
+
   )
 }
 export default Home
