@@ -1,4 +1,5 @@
 import Head from "next/Head"
+import Login from './login'
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
         <link rel="icon" href="/favicon.ico"/> 
       </Head>
       <a>Admin page</a>  
+
     </div>
   )
 }
