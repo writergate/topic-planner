@@ -4,7 +4,7 @@ import router, { useRouter } from 'next/router';
 
 function GetRouter(){
 const router = useRouter();
-return router.pathname === '/contactUs' || '/forgotPassword' ? false : true;
+return router.pathname === '/contactUs'  ? false : true;
 }
 
 const Layout =({children}) => {
