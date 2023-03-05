@@ -1,5 +1,5 @@
 
-import Layout from '../components/Layout';
+import Layout from '../components/Layout'
 import {ThemeProvider} from "@mui/material";
 import theme from '../components/theme';
 import '../styles/globals.css';
@@ -9,7 +9,7 @@ import "../styles/Templatespage.css";
 
 export default function App({ Component, pageProps }) {
   return (
-   <Layout>
+ <Layout>
     <Component {...pageProps} />
    </Layout>
   )
