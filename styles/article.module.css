@@ -1,0 +1,130 @@
+.box1{
+    
+    height: 50px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.box2{
+    
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+.box3{
+    
+    height: 400px;
+}
+.box4{
+    
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.box5{
+    
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.img1{
+    
+    height: 45px;
+    width: 45px;
+    margin-right: 30px;
+}
+
+.img2{
+    
+    height: 60px;
+    width: 60px;
+    margin-left: 70px;
+}
+
+.img3{
+    
+    height: 45px;
+    width: 45px;
+    margin-left: 70px;
+    display: flex;
+    
+}
+
+.innerBox{
+    
+    height: 60px;
+    width: 350px;
+    margin-left: 30px;
+
+}
+
+.dateTimeFollow{
+    
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+}
+
+.date, .follow{
+    margin-left: 30px;
+}
+
+.title{
+    margin-left: 70px;
+}
+
+.articleBody{
+    height: 355px;
+    width: 1200px;
+    margin-left: 70px;
+    margin-top: 8px;
+    background-color: #D9D9D9;
+
+}
+
+.like{
+    margin-left: 70px;
+    display: flex;
+    align-items:center ;
+}
+
+.like p{
+    margin-left: 5px;
+}
+
+.comment{
+    margin-left: 30px;
+    display: flex;
+    align-items:center ;
+}
+
+.comment p{
+    margin-left: 5px;
+}
+.download{
+    margin-left: 920px;
+}
+.share{
+    margin-left: 30px;
+}
+
+.text{
+    margin-left: 10px;
+    width: 800px;
+    height: 38px;
+    font-size: 16px;
+    color: #060606;
+    background-color: #fff;
+    border-bottom:1px solid #060606 ;
+    border-top:0;
+    border-right:0;
+    border-left:0 ;
+    
+    
+}
+ .text:focus{
+    outline:none;
+ }
