@@ -22,6 +22,14 @@ export default function ContactUs() {
     });
   };
 
+  const resetFields = (event) => {
+    setValues({
+      name : "",
+      email: "",
+      message:""
+    });
+  };
+
   const validateForm = () => {
     const newErrors = {};
     if (!values.name) {
@@ -44,8 +52,8 @@ export default function ContactUs() {
     event.preventDefault();
     if (validateForm()) {
       // Submit the form data
-      //console.log(values);
-      saveToDatabase();
+    //  saveToDatabase();
+      resetFields(event);      
     }
   };
   async function saveToDatabase(){
@@ -58,7 +66,7 @@ export default function ContactUs() {
 
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{marginTop:10}}>
       <Paper elevation={4}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
