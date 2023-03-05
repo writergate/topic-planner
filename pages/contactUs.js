@@ -1,6 +1,7 @@
 import { Paper, Grid, Typography, Button, TextField, colors } from "@mui/material";
 import Container from "@mui/material/Container";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function ContactUs() {
   const [values, setValues] = useState({
@@ -43,9 +44,18 @@ export default function ContactUs() {
     event.preventDefault();
     if (validateForm()) {
       // Submit the form data
-      console.log(values);
+      //console.log(values);
+      saveToDatabase();
     }
   };
+  async function saveToDatabase(){
+    const messageId = uuidv4();
+    const response = await fetch('https://2if7bk5j1b.execute-api.us-east-1.amazonaws.com/msg/message', {
+      method: 'POST',
+      body: JSON.stringify({ messageId: messageId, name: values.name, email: values.email, message: values.message })
+    });
+  }
+
 
   return (
     <Container maxWidth="lg">
