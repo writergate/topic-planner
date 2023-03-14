@@ -12,7 +12,7 @@ const Layout =({children}) => {
       <div className="content">
          {GetRouter() && <Header/>}
         {children}
-       {GetRouter() && <Navbar/>}
+        {GetRouter() && <Navbar/>}
       </div>
      
     );

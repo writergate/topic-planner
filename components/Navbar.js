@@ -106,7 +106,7 @@ function Navbar() {
             <li>
               <CheckIcon /> <Link href="/ArticleApproval">Articles approval</Link>
             </li>
-          </ul>npm run dev
+          </ul>
 
         </div>
       </div>
@@ -155,6 +155,7 @@ import IconButton from '@mui/material/IconButton';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useRouter } from 'next/router';
 
 
 
@@ -170,6 +171,8 @@ const iconMap = {
 };
 
 export default function NavBar() {
+  const router = useRouter();
+
   return (
     <Box sx={{ display: 'flex',  }}>
       <CssBaseline />
@@ -184,7 +187,7 @@ export default function NavBar() {
        <Toolbar>
           
           <Typography variant="h6" noWrap component="div">
-            Header
+            Header (our logo)
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <IconButton
@@ -229,7 +232,7 @@ export default function NavBar() {
         <List>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains','Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
             <ListItem key={text} disablePadding>
-              {/*//<Link href={`/${text.replace(' ', '')}`} passHref noHydration>*/}
+              <Link href={`/${text.replace(' ', '')}`} passHref >
                  <ListItemButton sx={{':hover': {backgroundColor: 'purple'}}}>
                        
                   <ListItemIcon>
@@ -237,7 +240,7 @@ export default function NavBar() {
                   </ListItemIcon>
                   <ListItemText primary={text} />
               </ListItemButton>
-              
+              </Link>
             </ListItem>
           ))}
         </List>
@@ -246,13 +249,14 @@ export default function NavBar() {
 
       <Box
         component="main"
-        sx={{ flexGrow: 1, backgroundColor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, backgroundColor: 'background.default', p: 3 }} //p means padding
       >
         <Toolbar />
-       
+       {/*start no need*/}
         <Typography paragraph>
-        hi
+      
         </Typography>
+        {/*End no need*/}
       </Box>
     </Box>
   );
