@@ -1,9 +1,12 @@
 
-
-import Image from 'next/legacy/image'
 import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+
+const StyledButton = styled(Button)({
+    textTransform: 'none', // set textTransform to none to prevent auto-uppercase
+  });
 
 function Templates() {
     const router = useRouter();
@@ -47,13 +50,13 @@ function Templates() {
                     flexDirection: 'column'
                 }}
             >
-                <Button variant="contained" color="secondary" onClick={handleCreateButtonClick} sx={{ width: '250px', marginRight: '10px' }} >
+                <StyledButton variant="contained" color="secondary" onClick={handleCreateButtonClick} sx={{ width: '250px', marginRight: '10px' }} >
                     Create Templates
-                </Button>
+                </StyledButton>
                 <Box sx={{ my: 2 }} />
-                <Button variant="contained" color="secondary" onClick={handleEditButtonClick} sx={{ width: '250px' }} >
+                <StyledButton variant="contained" color="secondary" onClick={handleEditButtonClick} sx={{ width: '250px' }} >
                     Edit Templates
-                </Button>
+                </StyledButton>
             </Box>
 
 

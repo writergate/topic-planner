@@ -1,4 +1,21 @@
+import Box from '@mui/material/Box';
 function createTemplates(){
-    return <h1>Create Templates</h1>
- }
+    return (
+
+        <Box sx={{
+          padding: '20px',
+          marginTop: '10px',
+          marginLeft: '260px',
+          marginRight: '260px',
+          backgroundColor: 'black',
+          color: 'white',
+        }}>
+          <h1 >Create templates</h1>
+          
+    
+        </Box>
+    
+    
+      );
+    }
  export default createTemplates
