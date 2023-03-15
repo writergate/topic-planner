@@ -1,11 +1,13 @@
-
+import Navbar from '../components/Navbar';
 import Box from '@mui/material/Box';
 function TopicDomains(){
 
     return (
+     <div>
+      <Navbar/>
         <Box sx={{
             padding: '20px',
-            marginTop: '100px',
+             marginTop: '100px',
             marginLeft: '260px',
             marginRight: '260px',
             backgroundColor: 'black',
@@ -20,7 +22,7 @@ function TopicDomains(){
       
           </Box>
       
-      
+          </div>
         );
       
     

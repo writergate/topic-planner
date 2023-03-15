@@ -1,7 +1,8 @@
+import Navbar from '../components/Navbar';
 import Box from '@mui/material/Box';
 function createTemplates(){
     return (
-
+      <><Navbar />
         <Box sx={{
           padding: '20px',
           marginTop: '100px',

@@ -1,4 +1,5 @@
+import Navbar from '../components/Navbar';
 function UserRoles(){
-    return <h1>Ar</h1>
+    return <><Navbar /><h1>Ar</h1></>
  }
  export default UserRoles

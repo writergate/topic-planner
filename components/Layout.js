@@ -1,4 +1,4 @@
-
+/*
 import Navbar from './Navbar';
 import router, { useRouter } from 'next/router';
 
@@ -19,7 +19,7 @@ const Layout =({children}) => {
 }
 
 export default Layout;
-
+*/
 /*
 import Header from './Header';
 import Navbar from './Navbar';
