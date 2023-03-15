@@ -122,9 +122,11 @@ export default Navbar
 
 //Permenant drawer
 import { useState } from "react";
-
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import * as React from 'react';
+
+//MUI components
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -132,12 +134,10 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 import DehazeIcon from '@mui/icons-material/Dehaze';
@@ -147,45 +147,41 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import BadgeIcon from '@mui/icons-material/Badge';
 import InfoIcon from '@mui/icons-material/Info';
 import GroupIcon from '@mui/icons-material/Group';
-import LayersIcon from '@mui/icons-material/Layers';
 import CheckIcon from '@mui/icons-material/Check';
-
 import IconButton from '@mui/material/IconButton';
-
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useRouter } from 'next/router';
 
 
 
-const drawerWidth = 240;  //width for the drawer we can change this
+
+const drawerWidth = 220;  //width for the drawer we can change this
 const iconMap = {
-  'Dashboard': <SpeedIcon />,
-  'Templates': <CreateIcon />,
-  'Article Types': <BadgeIcon  />,
-  'Topic Domains': <MenuBookIcon />,
-  'Flagged Topics':<InfoIcon/>, 
-  'User Roles':<GroupIcon/>,
-   'Generate Reports':<CheckIcon/>
+  'Dashboard': <SpeedIcon sx={{ color: 'white' }} />,
+  'Templates': <CreateIcon sx={{ color: 'white' }} />,
+  'Article Types': <BadgeIcon sx={{ color: 'white' }} />,
+  'Topic Domains': <MenuBookIcon sx={{ color: 'white' }} />,
+  'Flagged Topics': <InfoIcon sx={{ color: 'white' }} />,
+  'User Roles': <GroupIcon sx={{ color: 'white' }} />,
+  'Generate Reports': <CheckIcon sx={{ color: 'white' }} />
 };
 
 export default function NavBar() {
   const router = useRouter();
 
   return (
-    <Box sx={{ display: 'flex',  }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{ 
+        sx={{
           width: `calc(100% - ${drawerWidth}px)`,
-           ml: `${drawerWidth}px` ,
-           backgroundColor:'purple'
-         }}
+          ml: `${drawerWidth}px`,
+          backgroundColor: '#0082e6'
+        }}
       >
-       <Toolbar>
-          
+        <Toolbar>
+
           <Typography variant="h6" noWrap component="div">
             Header (our logo)
           </Typography>
@@ -195,7 +191,7 @@ export default function NavBar() {
             color="white"
             aria-label="search"
           >
-            < MailIcon  />
+            < MailIcon />
           </IconButton>
           <IconButton
             size="large"
@@ -218,33 +214,35 @@ export default function NavBar() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          backgroundColor: 'purple',
+
+
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor: '#2c3e50',
           },
         }}
         variant="permanent"  // making drawer permenant
         anchor="left"   //drawer to left
       >
         <Toolbar />
-        <Divider />
-        <List>
-          {['Dashboard', 'Templates', 'Article Types', 'Topic Domains','Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+
+        <List  sx={{overflow: 'hidden'}}>
+          {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
+            <ListItem key={text} >
               <Link href={`/${text.replace(' ', '')}`} passHref >
-                 <ListItemButton sx={{':hover': {backgroundColor: 'purple'}}}>
-                       
+                <ListItemButton sx={{ color: 'white', padding: '8px 1px', width: drawerWidth,':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' } }}>
                   <ListItemIcon>
-                      {iconMap[text]}
+                    {iconMap[text]}
                   </ListItemIcon>
                   <ListItemText primary={text} />
-              </ListItemButton>
+                </ListItemButton>
+
               </Link>
             </ListItem>
           ))}
         </List>
-        
+
       </Drawer>
 
       <Box
@@ -252,9 +250,9 @@ export default function NavBar() {
         sx={{ flexGrow: 1, backgroundColor: 'background.default', p: 3 }} //p means padding
       >
         <Toolbar />
-       {/*start no need*/}
+        {/*start no need*/}
         <Typography paragraph>
-      
+
         </Typography>
         {/*End no need*/}
       </Box>
