@@ -120,7 +120,7 @@ export default Navbar
 
 
 
-//Permenant drawer
+//Permanent drawer
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -128,6 +128,7 @@ import * as React from 'react';
 
 //MUI components
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
@@ -156,6 +157,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const drawerWidth = 220;  //width for the drawer we can change this
+const AppBarWidth = 64;
 const iconMap = {
   'Dashboard': <SpeedIcon sx={{ color: 'white' }} />,
   'Templates': <CreateIcon sx={{ color: 'white' }} />,
@@ -175,15 +177,15 @@ export default function NavBar() {
       <AppBar
         position="fixed"
         sx={{
-          width: `calc(100% - ${drawerWidth}px)`,
-          ml: `${drawerWidth}px`,
           backgroundColor: '#0082e6'
+          //width:`calc(100% - ${drawerWidth}px)`,
+          // ml: `${drawerWidth}px`,
         }}
       >
         <Toolbar>
 
           <Typography variant="h6" noWrap component="div">
-            Header (our logo)
+            Admin (our logo)
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <IconButton
@@ -195,14 +197,14 @@ export default function NavBar() {
           </IconButton>
           <IconButton
             size="large"
-            color="white"
+            color="white" // this don't work
             aria-label="notifications"
           >
             <NotificationsIcon />
           </IconButton>
           <IconButton
             size="large"
-            color="white"
+            color="white" // this don't work
             aria-label="account"
           >
             <AccountCircleIcon />
@@ -210,28 +212,31 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
 
+      <Toolbar />
+
       <Drawer
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-
-
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            marginTop: `calc(${AppBarWidth}px)`, //marginTop:'64px',
             backgroundColor: '#2c3e50',
           },
         }}
         variant="permanent"  // making drawer permenant
         anchor="left"   //drawer to left
       >
-        <Toolbar />
 
-        <List  sx={{overflow: 'hidden'}}>
+
+
+
+        <List sx={{ overflow: 'hidden' }}>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
             <ListItem key={text} >
               <Link href={`/${text.replace(' ', '')}`} passHref >
-                <ListItemButton sx={{ color: 'white', padding: '8px 1px', width: drawerWidth,':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' } }}>
+                <ListItemButton sx={{ color: 'white', padding: '8px 1px', width: drawerWidth, ':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' } }}>
                   <ListItemIcon>
                     {iconMap[text]}
                   </ListItemIcon>

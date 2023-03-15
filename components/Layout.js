@@ -1,4 +1,4 @@
-import Header from './Header';
+
 import Navbar from './Navbar';
 import router, { useRouter } from 'next/router';
 
@@ -10,7 +10,7 @@ return router.pathname === '/contactUs'  ? false : true;
 const Layout =({children}) => {
     return ( 
       <div className="content">
-         {GetRouter() && <Header/>}
+        
         {children}
         {GetRouter() && <Navbar/>}
       </div>
