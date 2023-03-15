@@ -5,7 +5,7 @@ function editTemplates(){
 
         <Box sx={{
           padding: '20px',
-          marginTop: '10px',
+          marginTop: '100px',
           marginLeft: '260px',
           marginRight: '260px',
           backgroundColor: 'black',
