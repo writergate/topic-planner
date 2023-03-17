@@ -1,5 +1,6 @@
 import Head from "next/Head"
 import Login from './login'
+import Navbar from '../components/Navbar';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
 
         <link rel="icon" href="/favicon.ico"/> 
       </Head>
+      <Navbar/>
       <a>Admin page</a>  
 
     </div>
