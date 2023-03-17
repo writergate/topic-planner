@@ -52,7 +52,7 @@ export default function ContactUs() {
     event.preventDefault();
     if (validateForm()) {
       // Submit the form data
-    //  saveToDatabase();
+      saveToDatabase();
       resetFields(event);      
     }
   };
@@ -128,7 +128,7 @@ export default function ContactUs() {
                 variant="outlined"
                 required
                 margin="normal"
-                multiline="true"
+                multiline
                 rows="10"
                 sx={{ width: "70%" }}
                 error={Boolean(errors.message)}
