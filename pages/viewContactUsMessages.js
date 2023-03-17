@@ -18,6 +18,8 @@ import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import GetContactUsMessages from "./api/ContactUsMessages";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export async function getStaticProps() {
   const messages = await GetContactUsMessages();
@@ -93,6 +95,16 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
+/*function LoadMessage(item) {
+  const router = useRouter();
+  React.useEffect(()=> {
+  router.push({
+    pathname: "/viewContactUsMessage/[prop]",
+    query: { prop: item },
+  });})  
+  
+}*/
+
 export default function ViewContactUsMessages({ messages }) {
   const rows = messages.messages;
   const [page, setPage] = React.useState(0);
@@ -143,7 +155,18 @@ export default function ViewContactUsMessages({ messages }) {
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.email}</TableCell>
                 <TableCell>
-                  <Button variant="contained">View Message</Button>
+                  <Button variant="contained">
+                    <Link href={{
+                        pathname:'viewContactUsMessage',
+                        query:{
+                            itemName:row.name,
+                            itemEmail:row.email,
+                            itemMessage:row.message
+                        }
+                    }}>
+                    View Message
+                    </Link>
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
