@@ -316,11 +316,11 @@ export default function CustomPaginationActionsTable() {
           <Table sx={{ minWidth: 600 }} aria-label="custom pagination table">
             <TableHead >
              
-                <TableRow >
-                  <TableCell sx={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Topic Id</TableCell>
-                  <TableCell sx={{ fontSize: '1.1rem', fontWeight: 'bold' }} >Topic</TableCell>
-                  <TableCell sx={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Remove Topic</TableCell>
-                  <TableCell sx={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Keep Topic</TableCell>
+                <TableRow sx={{backgroundColor:'#b3b3b3' }}>
+                  <TableCell sx={{ fontSize: '1.1rem', color:'white' }}>Topic Id</TableCell>
+                  <TableCell sx={{ fontSize: '1.1rem', color:'white' }}>Topic</TableCell>
+                  <TableCell sx={{ fontSize: '1.1rem', color:'white' }}>Remove Topic</TableCell>
+                  <TableCell sx={{ fontSize: '1.1rem', color:'white' }}>Keep Topic</TableCell>
                 </TableRow>
 
            
@@ -334,7 +334,7 @@ export default function CustomPaginationActionsTable() {
                   <TableCell component="th" scope="row">
                     {row.id}
                   </TableCell>
-                  <TableCell style={{ width: 260 }} align="Left">
+                  <TableCell style={{ width: 250 }} align="Left">
                     {row.name}
                   </TableCell>
                   <TableCell>
