@@ -1,17 +1,52 @@
-import { Button, Container, Grid, Paper,Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  Snackbar,
+  IconButton,
+  CloseIcon,
+} from "@mui/material";
 import { useRouter } from "next/router";
-
-
+import * as React from "react";
 
 export default function ViewContactUsMessage({}) {
-    const router = useRouter()
-    const name = router.query.itemName;
-    const email = router.query.itemEmail;
-    const message = router.query.itemMessage;
+  const router = useRouter();
+  const name = router.query.itemName;
+  const email = router.query.itemEmail;
+  const message = router.query.itemMessage;
 
-    const handleButtonClick = () => {
-        window.open('mailto:'+email);
-      };
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
+  const handleButtonClick = () => {
+    setOpen(true);
+    //window.open("mailto:" + email);
+  };
   return (
     <Container maxWidth="lg" sx={{ marginTop: 10 }}>
       <Paper elevation={4}>
@@ -27,7 +62,12 @@ export default function ViewContactUsMessage({}) {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h5" color="primary" align="left" marginLeft={2}>
+            <Typography
+              variant="h5"
+              color="primary"
+              align="left"
+              marginLeft={2}
+            >
               Email : {email}
             </Typography>
           </Grid>
@@ -37,10 +77,22 @@ export default function ViewContactUsMessage({}) {
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign="right">
-            <Button variant="contained" onClick={handleButtonClick}>Reply</Button>
+            <Button variant="contained" onClick={handleButtonClick}>
+              Reply
+            </Button>
           </Grid>
         </Grid>
       </Paper>
+      <div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Note archived"
+        action={action}
+      />
+      </div>
     </Container>
+    
   );
 }
