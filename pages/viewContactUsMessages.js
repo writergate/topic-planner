@@ -26,6 +26,7 @@ export async function getStaticProps() {
   return { props: { messages } };
 }
 
+
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
@@ -157,14 +158,14 @@ export default function ViewContactUsMessages({ messages }) {
                 <TableCell>
                   <Button variant="contained">
                     <Link href={{
-                        pathname:'viewContactUsMessage',
-                        query:{
-                            itemName:row.name,
-                            itemEmail:row.email,
-                            itemMessage:row.message
-                        }
+                      pathname: 'viewContactUsMessage',
+                      query: {
+                        itemName: row.name,
+                        itemEmail: row.email,
+                        itemMessage: row.message
+                      }
                     }}>
-                    View Message
+                      View Message
                     </Link>
                   </Button>
                 </TableCell>

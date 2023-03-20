@@ -58,9 +58,10 @@ export default function ContactUs() {
   };
   async function saveToDatabase(){
     const messageId = uuidv4();
+    const timeStamp = new Date();
     const response = await fetch('https://2if7bk5j1b.execute-api.us-east-1.amazonaws.com/msg/message', {
       method: 'POST',
-      body: JSON.stringify({ messageId: messageId, name: values.name, email: values.email, message: values.message })
+      body: JSON.stringify({ messageId: messageId, name: values.name, email: values.email, message: values.message, replied:false, savedAt:timeStamp })
     });
   }
 
