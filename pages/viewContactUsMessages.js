@@ -26,6 +26,7 @@ export async function getStaticProps() {
   return { props: { messages } };
 }
 
+
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
