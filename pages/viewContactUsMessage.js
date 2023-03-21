@@ -1,3 +1,4 @@
+import { Send } from "@mui/icons-material";
 import {
   Button,
   Container,
@@ -7,9 +8,11 @@ import {
   Snackbar,
   IconButton,
   CloseIcon,
+  ThemeProvider,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import * as React from "react";
+import { theme } from "../components/theme";
 
 export default function ViewContactUsMessage({}) {
   const router = useRouter();
@@ -48,6 +51,7 @@ export default function ViewContactUsMessage({}) {
     //window.open("mailto:" + email);
   };
   return (
+    <ThemeProvider theme={theme}>
     <Container maxWidth="lg" sx={{ marginTop: 10 }}>
       <Paper elevation={4}>
         <Grid Container spacing={2}>
@@ -57,27 +61,26 @@ export default function ViewContactUsMessage({}) {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h5" color="primary" align="left" padding={2}>
+            <Typography variant="h5" color="primary.dark" align="left" padding={2}>
               Name : {name}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography
               variant="h5"
-              color="primary"
+              color="primary.dark"
               align="left"
-              marginLeft={2}
-            >
+              marginLeft={2}>
               Email : {email}
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h5" color="primary" align="left" padding={2}>
+            <Typography variant="h5" color="primary.dark" align="left" padding={2}>
               Message : {message}
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign="right">
-            <Button variant="contained" onClick={handleButtonClick}>
+            <Button variant="contained" endIcon={<Send/>} onClick={handleButtonClick} sx={{margin:2}}>
               Reply
             </Button>
           </Grid>
@@ -93,6 +96,6 @@ export default function ViewContactUsMessage({}) {
       />
       </div>
     </Container>
-    
+    </ThemeProvider>
   );
 }
