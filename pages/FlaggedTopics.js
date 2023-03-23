@@ -188,7 +188,7 @@ export default function FlaggedTopics() {
           <Table sx={{ minWidth: 600 }} aria-label="custom pagination table">
             <TableHead >
 
-              <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
+              <TableRow sx={{ backgroundColor: '#0e0e42' }}>
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic Id</TableCell>
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic</TableCell>
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Remove Topic</TableCell>

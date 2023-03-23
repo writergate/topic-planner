@@ -142,11 +142,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import SpeedIcon from '@mui/icons-material/Speed';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import CreateIcon from '@mui/icons-material/Create';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import BadgeIcon from '@mui/icons-material/Badge';
-import InfoIcon from '@mui/icons-material/Info';
+import TopicIcon from '@mui/icons-material/Topic';
+import ArticleIcon from '@mui/icons-material/Article';
+import FlagIcon from '@mui/icons-material/Flag';
 import GroupIcon from '@mui/icons-material/Group';
 import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@mui/material/IconButton';
@@ -159,11 +159,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const drawerWidth = 220;  //width for the drawer we can change this
 const AppBarWidth = 64;
 const iconMap = {
-  'Dashboard': <SpeedIcon sx={{ color: 'white' }} />,
+  'Dashboard': < DashboardIcon sx={{ color: 'white' }} />,
   'Templates': <CreateIcon sx={{ color: 'white' }} />,
-  'Article Types': <BadgeIcon sx={{ color: 'white' }} />,
-  'Topic Domains': <MenuBookIcon sx={{ color: 'white' }} />,
-  'Flagged Topics': <InfoIcon sx={{ color: 'white' }} />,
+  'Article Types': < ArticleIcon sx={{ color: 'white' }} />,
+  'Topic Domains': <TopicIcon sx={{ color: 'white' }} />,
+  'Flagged Topics': <FlagIcon sx={{ color: 'white' }} />,
   'User Roles': <GroupIcon sx={{ color: 'white' }} />,
   'Generate Reports': <CheckIcon sx={{ color: 'white' }} />
 };
@@ -177,7 +177,7 @@ export default function NavBar() {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: '#0082e6'
+          backgroundColor: '#4f4fcb'
           //width:`calc(100% - ${drawerWidth}px)`,
           // ml: `${drawerWidth}px`,
         }}
@@ -222,7 +222,7 @@ export default function NavBar() {
             width: drawerWidth,
             boxSizing: 'border-box',
             marginTop: `calc(${AppBarWidth}px)`, //marginTop:'64px',
-            backgroundColor: '#2c3e50',
+            backgroundColor: '#060552',
           },
         }}
         variant="permanent"  // making drawer permenant
