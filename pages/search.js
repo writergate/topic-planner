@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import {TextField, IconButton, InputAdornment} from '@mui/material';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
+import SearchArticleBox from './searchArticle/searchArticleBox';
 
 
 const SearchTextField = styled(TextField)({
@@ -25,6 +26,7 @@ const SearchTextField = styled(TextField)({
 
 function Search(){
     return(
+        
         <div className={style.outer}>
             <Head>
                 <title>Search</title>
@@ -36,7 +38,7 @@ function Search(){
                 
             </div>
             <div className={style.searchBox}>
-                <Box sx={{ width: 1400, maxWidth: '100%'}}>
+                <Box sx={{ width: 1350, maxWidth: '100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <SearchTextField fullWidth  placeholder="Search Article" id="fullWidth" type="search" 
                     InputProps={{style: {borderRadius: '20px'} ,  startAdornment: (
                         <InputAdornment position="start">
@@ -48,7 +50,7 @@ function Search(){
                 </Box>
             </div>
             <div className={style.articleBoxOuter}>
-                
+                < SearchArticleBox />
             </div>
         </div>
     );

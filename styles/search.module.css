@@ -1,15 +1,15 @@
 .outer{
-
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-
 .navbar{
-    border: 1px red solid;
+    
     height: 8vh;
     width: 100vw;
 }
 
 .searchBox{
-    border: 1px red solid;
+   
     height: 12vh;
     width: 100vw;
     display: flex;
@@ -18,7 +18,7 @@
 }
 
 .articleBoxOuter{
-    border: 1px red solid;
-    height: 80vh;
-    width: 100vw
+    overflow: hidden;
+    width: 100vw;
+    
 }
