@@ -26,12 +26,7 @@ function Dashboard() {
         }}
       >
       <h1>DashBoard</h1>
-      {showClearAlert && (
-        <Alert severity="success">This is a success alert — check it out!</Alert>
-      )}
-      <Button variant="contained" color="primary" onClick={handleClearButtonClick}>
-        Clear
-      </Button>
+      
      
       </Box>
     </div>

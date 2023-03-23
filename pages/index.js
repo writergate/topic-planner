@@ -1,6 +1,7 @@
 import Head from "next/Head"
 import Login from './login'
 import Navbar from '../components/Navbar';
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -15,8 +16,9 @@ function Home() {
       </Head>
       <Navbar/>
       <a>Admin page</a>  
-
+      <Footer/>
     </div>
+  
 
   )
 }

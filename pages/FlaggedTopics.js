@@ -94,6 +94,7 @@ function createData(id, name) {
 
 export default function FlaggedTopics() {
   const [rows, setRows] = useState([
+    
     createData(1, 'First flagged topic'),
     createData(2, 'Second flagged topic'),
     createData(3, 'Third flagged topic'),
@@ -151,7 +152,7 @@ export default function FlaggedTopics() {
 
   
     setKeepRowId(keepRowId); // set the keepRowId state
-    setKeepAlert(true); // set the showClearAlert state to true
+    setKeepAlert(true); // set the keepClearAlert state to true
 
     console.log('showKeepAlert:', showKeepAlert);
 
@@ -188,11 +189,11 @@ export default function FlaggedTopics() {
           <Table sx={{ minWidth: 600 }} aria-label="custom pagination table">
             <TableHead >
 
-              <TableRow sx={{ backgroundColor: '#0e0e42' }}>
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic Id</TableCell>
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic</TableCell>
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Remove Topic</TableCell>
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Keep Topic</TableCell>
+              <TableRow sx={{ backgroundColor: '#0e0e42',fontWeight: 700 }}>
+                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Topic Id</TableCell>
+                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Topic</TableCell>
+                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Remove Topic</TableCell>
+                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Keep Topic</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

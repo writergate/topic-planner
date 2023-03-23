@@ -183,28 +183,46 @@ export default function NavBar() {
         }}
       >
         <Toolbar>
-
-          <Typography variant="h6" noWrap component="div">
-            Admin (our logo)
+          
+        <Typography variant="h6" noWrap component="div"
+            sx={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: '#030d28',
+              textDecoration: 'none',
+            }}>
+            Admin
+            </Typography>
+          <Typography variant="h6" noWrap component="div"
+            sx={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              paddingLeft:'10px'
+            }}>
+            LOGO
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <IconButton
             size="large"
-            color="white"
+            color="inherit"
             aria-label="search"
           >
             < MailIcon />
           </IconButton>
           <IconButton
             size="large"
-            color="white" // this don't work
+            color="inherit"
             aria-label="notifications"
           >
             <NotificationsIcon />
           </IconButton>
           <IconButton
             size="large"
-            color="white" // this don't work
+            color="inherit"
             aria-label="account"
           >
             <AccountCircleIcon />
@@ -222,7 +240,7 @@ export default function NavBar() {
             width: drawerWidth,
             boxSizing: 'border-box',
             marginTop: `calc(${AppBarWidth}px)`, //marginTop:'64px',
-            backgroundColor: '#060552',
+            backgroundColor: '#060552'
           },
         }}
         variant="permanent"  // making drawer permenant
@@ -234,33 +252,29 @@ export default function NavBar() {
 
         <List sx={{ overflow: 'hidden' }}>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
-            <ListItem key={text} >
+           
+           <ListItem key={text} >
               <Link href={`/${text.replace(' ', '')}`} passHref >
-                <ListItemButton sx={{ color: 'white', padding: '8px 1px', width: drawerWidth, ':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' } }}>
+                <ListItemButton sx={{
+                  color: 'white', padding: '8px 1px', width: drawerWidth,':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' }
+                }}>
                   <ListItemIcon>
                     {iconMap[text]}
                   </ListItemIcon>
                   <ListItemText primary={text} />
+                
                 </ListItemButton>
-
+                
               </Link>
             </ListItem>
+         
+            
           ))}
         </List>
 
       </Drawer>
 
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, backgroundColor: 'background.default', p: 3 }} //p means padding
-      >
-        <Toolbar />
-        {/*start no need*/}
-        <Typography paragraph>
-
-        </Typography>
-        {/*End no need*/}
-      </Box>
+     
     </Box>
   );
 }

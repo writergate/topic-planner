@@ -40,7 +40,7 @@ export default function TopTab() {
           color: 'white',
         }}
       >
-        <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'white' }}>
+        <Box sx={{ maxWidth: { xs: 320, sm: 480 }, backgroundColor: 'white' }}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -52,11 +52,13 @@ export default function TopTab() {
               label="Create"
               icon={<CreateIcon />}
               onClick={handleCreateArticleType}
-              
+              sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
             />
             <Tab label="Edit"
-              icon={< EditOffIcon/>}
-              onClick={handleEditArticleType} />
+              icon={< EditOffIcon />}
+              onClick={handleEditArticleType} 
+              sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
+              />
           </Tabs>
         </Box>
       </Box>

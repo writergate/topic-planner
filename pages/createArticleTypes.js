@@ -52,6 +52,7 @@ function createArticleTypes() {
               id="outlined-required"
               label="Required"
               defaultValue="Your Article type"
+            
               //helperText='name'
             />
           </div>
@@ -60,7 +61,7 @@ function createArticleTypes() {
               variant="contained"
               color="primary"
               type="submit"
-              sx={{ width: "40%", marginBottom: 2, padding: 1 }}
+              sx={{ marginTop:'10px',padding: 1 }}
             >
               Submit
             </Button>
