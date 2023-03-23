@@ -37,27 +37,11 @@
     margin-right: 30px;
 }
 
-.img2{
-    
-    height: 60px;
-    width: 60px;
-    margin-left: 70px;
-}
-
-.img3{
-    
-    height: 45px;
-    width: 45px;
-    margin-left: 70px;
-    display: flex;
-    
-}
-
 .innerBox{
     
     height: 60px;
     width: 350px;
-    margin-left: 30px;
+    margin-left: 20px;
 
 }
 
@@ -111,20 +95,3 @@
     margin-left: 30px;
 }
 
-.text{
-    margin-left: 10px;
-    width: 800px;
-    height: 38px;
-    font-size: 16px;
-    color: #060606;
-    background-color: #fff;
-    border-bottom:1px solid #060606 ;
-    border-top:0;
-    border-right:0;
-    border-left:0 ;
-    
-    
-}
- .text:focus{
-    outline:none;
- }
