@@ -1,10 +1,18 @@
 import styles from '../styles/article.module.css'
 import Image from 'next/image'
 import React from 'react'
-
+import Head from "next/Head"
 function Article(){
 return(
+
         <div>
+            <Head>
+                <title>Article</title>
+                <meta name="description" content="created by team"  />
+
+                <link rel="icon" href="/favicon.ico"/> 
+            </Head>
+           
             <div className={styles.box1}>
                 <div className={styles.img1}>
                     <Image src="/../public/user.png" width="45" height="45" alt='user'/>

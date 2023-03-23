@@ -1,0 +1,24 @@
+.outer{
+
+}
+
+.navbar{
+    border: 1px red solid;
+    height: 8vh;
+    width: 100vw;
+}
+
+.searchBox{
+    border: 1px red solid;
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articleBoxOuter{
+    border: 1px red solid;
+    height: 80vh;
+    width: 100vw
+}
