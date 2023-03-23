@@ -113,6 +113,8 @@ export default function FlaggedTopics() {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [showClearAlert, setClearAlert] = React.useState(false);
   const [deletedRowId, setDeletedRowId] = useState(null);
+  const [showKeepAlert, setKeepAlert] = React.useState(false);
+  const [keepRowId, setKeepRowId] = useState(null);
 
 
   // Avoid a layout jump when reaching the last page with empty rows.
@@ -142,6 +144,18 @@ export default function FlaggedTopics() {
     //console.log('showClearAlert:', showClearAlert);
 
   };
+  const handleKeepButtonClick = (id) => {
+    const newRows = rows.filter(row => row.id !== id);
+    setRows(newRows);
+    const keepRowId = id; // Define keepRowId here
+
+  
+    setKeepRowId(keepRowId); // set the keepRowId state
+    setKeepAlert(true); // set the showClearAlert state to true
+
+    console.log('showKeepAlert:', showKeepAlert);
+
+  };
 
 
   return (
@@ -162,6 +176,12 @@ export default function FlaggedTopics() {
           <Alert severity="success" onClose={() => setClearAlert(false)}>
             <AlertTitle>Success</AlertTitle>
             Row {deletedRowId} deleted successfully.
+          </Alert>
+        )}
+        {showKeepAlert && keepRowId !== null && (
+          <Alert severity="success" onClose={() => setKeepAlert(false)}>
+            <AlertTitle>Success</AlertTitle>
+            Row {keepRowId} keep successfully.
           </Alert>
         )}
         <TableContainer component={Paper}>
@@ -196,7 +216,7 @@ export default function FlaggedTopics() {
 
                   </TableCell>
                   <TableCell>
-                    <Button variant="contained" color="primary" >
+                    <Button variant="contained" color="primary" onClick={() => handleKeepButtonClick(row.id)} >
                       Keep
                     </Button>
                   </TableCell>
