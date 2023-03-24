@@ -4,7 +4,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import TopTab from '../components/TopTab';
+import TopTabDomains from '../components/TopTab';
 import { Paper, Grid, Typography, Button, TextField, colors } from "@mui/material";
 import Container from "@mui/material/Container";
 function createArticleTypes() {
@@ -14,7 +14,7 @@ function createArticleTypes() {
 
       <Navbar />
 
-      <TopTab />
+      <TopTabDomains />
       <Box
         sx={{
           padding: '20px',
@@ -43,7 +43,7 @@ function createArticleTypes() {
           autoComplete="off"
         >
           <div  >
-            <span style={{ color: 'blue' }}>Enter Article type</span>
+            <span style={{ color: 'blue' }}>Enter Topic Domain</span>
             <span>Some text here</span>
           </div>
           <div>
@@ -51,7 +51,7 @@ function createArticleTypes() {
               required
               id="outlined-required"
               label="Required"
-              defaultValue="Your Article type"
+              defaultValue="Your Topic Domain"
             
               //helperText='name'
             />
@@ -63,7 +63,7 @@ function createArticleTypes() {
               type="submit"
               sx={{ marginTop:'10px',padding: 1 }}
             >
-              Submit
+              Save
             </Button>
           </div>
         </Box>

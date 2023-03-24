@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import Button from '@mui/material/Button';
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -26,10 +26,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 
-
-
-
-import TopTab from '../components/TopTab';
+import TopTab from '../../components/TopTab';
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -133,7 +130,7 @@ function EditArticleTypes() {
   };
 
   const handleEditButtonClick = (id) => {
-    // Find the row with the given ID
+    // Find the row with the given id
     const row = rows.find((r) => r.id === id);
 
     // Set the initial value of the text field
@@ -174,7 +171,7 @@ function EditArticleTypes() {
           <DialogActions>
             <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
             <Button onClick={() => {
-              // Save the updated value of the article type
+              // Save the updated value of the article type and i have to code this further
               // and close the dialog
               setOpenDialog(false);
             }} color="primary">
@@ -191,9 +188,7 @@ function EditArticleTypes() {
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type Id</TableCell>
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type</TableCell>
                 <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
-
               </TableRow>
-
 
             </TableHead>
             <TableBody>

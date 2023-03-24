@@ -18,14 +18,14 @@ export default function TopTab() {
 
   const router = useRouter();
 
-  const handleCreateArticleType = () => {
+  const handleCreateTopicDomains= () => {
     console.log('Tab1 clicked');
-    router.push('/ArticleTypes/createArticleTypes');
+    router.push('/CreateTopicDomains');
   };
 
-  const handleEditArticleType = () => {
+  const handleEditTopicDomains= () => {
     console.log('Tab 2 clicked');
-    router.push('/ArticleTypes/EditArticleTypes');
+    router.push('/ArticleTypes/EditTopicDomains');
   };
 
   return (
@@ -51,12 +51,12 @@ export default function TopTab() {
             <Tab
               label="Create"
               icon={<CreateIcon />}
-              onClick={handleCreateArticleType}
+              onClick={handleCreateTopicDomains}
               sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
             />
             <Tab label="Edit"
               icon={< EditOffIcon />}
-              onClick={handleEditArticleType} 
+              onClick={handleEditTopicDomains} 
               sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
               />
           </Tabs>

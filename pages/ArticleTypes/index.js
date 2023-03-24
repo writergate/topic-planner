@@ -92,8 +92,8 @@ import Navbar from '../components/Navbar';
 export default ArticleTypes;
 */
 import next from 'next';
-import Navbar from '../components/Navbar';
-import TopTab from '../components/TopTab';
+import Navbar from '../../components/Navbar';
+import TopTab from '../../components/TopTab';
 import image from 'next/image';
 
 function ArticleTypes(){
