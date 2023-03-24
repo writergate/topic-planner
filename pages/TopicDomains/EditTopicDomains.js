@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import Button from '@mui/material/Button';
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -26,7 +26,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 
-import TopTabDomains from '../components/TopTab';
+import TopTabDomains from '../../components/TopTabDomains';
 
 
 function TablePaginationActions(props) {

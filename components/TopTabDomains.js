@@ -19,13 +19,15 @@ export default function TopTab() {
   const router = useRouter();
 
   const handleCreateTopicDomains= () => {
+  
+    router.push('/TopicDomains/CreateTopicDomains');
     console.log('Tab1 clicked');
-    router.push('/CreateTopicDomains');
   };
 
   const handleEditTopicDomains= () => {
+ 
+    router.push('/TopicDomains/EditTopicDomains');
     console.log('Tab 2 clicked');
-    router.push('/ArticleTypes/EditTopicDomains');
   };
 
   return (
@@ -44,7 +46,7 @@ export default function TopTab() {
           <Tabs
             value={value}
             onChange={handleChange}
-            variant="scrollable"
+           variant="scrollable"
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
           >
@@ -55,7 +57,7 @@ export default function TopTab() {
               sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
             />
             <Tab label="Edit"
-              icon={< EditOffIcon />}
+              icon={<EditOffIcon />}
               onClick={handleEditTopicDomains} 
               sx={{ flexDirection: 'row', alignItems: 'center',fontWeight:'700' }}
               />

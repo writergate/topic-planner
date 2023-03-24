@@ -1,7 +1,7 @@
 
 
-import Navbar from '../components/Navbar';
-import TopTabDomains from '../components/TopTabDomains';
+import Navbar from '../../components/Navbar';
+import TopTabDomains from '../../components/TopTabDomains';
 
 
 function TopicDomains(){

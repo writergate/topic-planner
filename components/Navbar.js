@@ -184,6 +184,7 @@ export default function NavBar() {
   };
 
 
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -263,31 +264,27 @@ export default function NavBar() {
 
 
 
-        <List sx={{ overflow: 'hidden' }}>
+<List sx={{ overflow: 'hidden' }}>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
-
-            <ListItem key={text} >
-              <Link href={`/${text.replace(' ', '')}`} passHref >
+            <ListItem key={text}>
+              <Link href={`/${text.replace(' ', '')}`} passHref>
                 <ListItemButton
+                  selected={selectedIndex === index}
+                  onClick={(event) => handleListItemClick(event, index)}
                   sx={{
                     color: 'white',
-                    padding: '8px 1px',                                                                                                           
+                    padding: '8px 1px',
                     width: drawerWidth,
                     ':hover': {
                       color: 'inherit',
-                      backgroundColor: '#d9ddf1',
+                      backgroundColor: '#5f71f3',
                       '& .MuiSvgIcon-root': {
                         color: 'black',
                       },
                     },
-                    ...(router.pathname === `/${text.replace(' ', '')}` && {
-                      backgroundColor: '#c9d0f6',
-                      color: 'black',
-                      '& .MuiSvgIcon-root': {
-                        color: 'black',
-                      },
-                    }),
+                    
                   }}
+                  
                 >
                   <ListItemIcon>
                     {iconMap[text]}

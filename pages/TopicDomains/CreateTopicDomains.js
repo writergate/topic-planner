@@ -1,13 +1,13 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import TopTabDomains from '../components/TopTab';
+import TopTabDomains from '../../components/TopTab';
 import { Paper, Grid, Typography, Button, TextField, colors } from "@mui/material";
 import Container from "@mui/material/Container";
-function createArticleTypes() {
+function CreateTopicDomains() {
 
   return (
     <div >
@@ -73,4 +73,4 @@ function createArticleTypes() {
 
 
 }
-export default createArticleTypes;
+export default CreateTopicDomains;
