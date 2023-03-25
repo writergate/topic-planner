@@ -1,10 +1,9 @@
-
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import Button from '@mui/material/Button';
 import * as React from 'react';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -20,10 +19,15 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 
-//Table pagination
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import TextField from '@mui/material/TextField';
+
+import TopTab from '../../components/TopTab';
+
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
@@ -43,6 +47,7 @@ function TablePaginationActions(props) {
   const handleLastPageButtonClick = (event) => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
+
 
   return (
     <Box sx={{ flexShrink: 0, ml: 2.5 }}>
@@ -90,32 +95,25 @@ function createData(id, name) {
   return { id, name };
 }
 
-//Flagged Topics
+const rows = [
+  createData(1, 'Article Type 1'),
+  createData(2, 'Article Type 2'),
+  createData(3, 'Article Type 3'),
+  createData(4, 'Article Type 4'),
+  createData(5, 'Article Type 5'),
+  createData(6, 'Article Type 6'),
+  createData(7, 'Article Type 7'),
+  createData(8, 'Article Type 8'),
+]
 
-export default function FlaggedTopics() {
-  const [rows, setRows] = useState([
-    
-    createData(1, 'First flagged topic'),
-    createData(2, 'Second flagged topic'),
-    createData(3, 'Third flagged topic'),
-    createData(4, 'First flagged topic'),
-    createData(5, 'Second flagged topic'),
-    createData(6, 'Third flagged topic'),
-    createData(7, 'First flagged topic'),
-    createData(8, 'Second flagged topic'),
-    createData(9, 'Third flagged topic'),
-    createData(10, 'First flagged topic'),
-    createData(11, 'Second flagged topic'),
-    createData(12, 'Third flagged topic'),
 
-  ]);
+
+function EditArticleTypes() {
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [showClearAlert, setClearAlert] = React.useState(false);
-  const [deletedRowId, setDeletedRowId] = useState(null);
-  const [showKeepAlert, setKeepAlert] = React.useState(false);
-  const [keepRowId, setKeepRowId] = useState(null);
+  const [openDialog, setOpenDialog] = React.useState(false);
+  const [articleType, setArticleType] = React.useState('');
 
 
   // Avoid a layout jump when reaching the last page with empty rows.
@@ -131,70 +129,67 @@ export default function FlaggedTopics() {
     setPage(0);
   };
 
+  const handleEditButtonClick = (id) => {
+    // Find the row with the given id
+    const row = rows.find((r) => r.id === id);
 
+    // Set the initial value of the text field
+    setArticleType(row.name);
 
-  const handleClearButtonClick = (id) => {
-    const newRows = rows.filter(row => row.id !== id);
-    setRows(newRows);
-    const deletedRowId = id; // Define deletedRowId here
-
-    //console.log('deletedRowId:', deletedRowId); // log the deletedRowId state
-    setDeletedRowId(deletedRowId); // set the deletedRowId state
-    setClearAlert(true); // set the showClearAlert state to true
-
-    //console.log('showClearAlert:', showClearAlert);
-
+    // Open the dialog
+    setOpenDialog(true);
   };
-  const handleKeepButtonClick = (id) => {
-    const newRows = rows.filter(row => row.id !== id);
-    setRows(newRows);
-    const keepRowId = id; // Define keepRowId here
-
-  
-    setKeepRowId(keepRowId); // set the keepRowId state
-    setKeepAlert(true); // set the keepClearAlert state to true
-
-    console.log('showKeepAlert:', showKeepAlert);
-
-  };
-
 
   return (
-    <div>
+    <div >
+
       <Navbar />
 
+      <TopTab />
       <Box
         sx={{
           padding: '20px',
           marginTop: '2px',
           marginLeft: '300px',
           marginRight: '260px',
-          backgroundColor: 'white',
+          backgroundColor: '#242444',
           color: 'white',
         }}
       >
-        {showClearAlert && deletedRowId !== null && (
-          <Alert severity="success" onClose={() => setClearAlert(false)}>
-            <AlertTitle>Success</AlertTitle>
-            Row {deletedRowId} deleted successfully.
-          </Alert>
-        )}
-        {showKeepAlert && keepRowId !== null && (
-          <Alert severity="success" onClose={() => setKeepAlert(false)}>
-            <AlertTitle>Success</AlertTitle>
-            Row {keepRowId} keep successfully.
-          </Alert>
-        )}
+        <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
+          <DialogTitle>Edit Article Type</DialogTitle>
+          <DialogContent>
+            <TextField
+              autoFocus
+              margin="dense"
+              label="Article Type"
+              fullWidth
+              value={articleType}
+              onChange={(e) => setArticleType(e.target.value)}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
+            <Button onClick={() => {
+              // Save the updated value of the article type and i have to code this further
+              // and close the dialog
+              setOpenDialog(false);
+            }} color="primary">
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 600 }} aria-label="custom pagination table">
             <TableHead >
 
-              <TableRow sx={{ backgroundColor: '#0e0e42',fontWeight: 700 }}>
-                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Topic Id</TableCell>
-                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Topic</TableCell>
-                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Remove Topic</TableCell>
-                <TableCell sx={{ fontSize: '1rem', color: 'white' }}>Keep Topic</TableCell>
+              <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type Id</TableCell>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type</TableCell>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
               </TableRow>
+
             </TableHead>
             <TableBody>
               {(rowsPerPage > 0
@@ -205,22 +200,15 @@ export default function FlaggedTopics() {
                   <TableCell component="th" scope="row">
                     {row.id}
                   </TableCell>
-                  <TableCell style={{ width: 250 }} align="Left">
+                  <TableCell style={{ width: 260 }} align="Left">
                     {row.name}
                   </TableCell>
                   <TableCell>
-
-                    <Button variant="contained" color="primary" onClick={() => handleClearButtonClick(row.id)}>
-                      Clear
-                    </Button>
-
-
-                  </TableCell>
-                  <TableCell>
-                    <Button variant="contained" color="primary" onClick={() => handleKeepButtonClick(row.id)} >
-                      Keep
+                    <Button variant="contained" color="primary" onClick={() => handleEditButtonClick(row.id)}>
+                      Edit
                     </Button>
                   </TableCell>
+
                 </TableRow>
               ))}
 
@@ -255,4 +243,7 @@ export default function FlaggedTopics() {
       </Box>
     </div>
   );
+
+
 }
+export default EditArticleTypes;
