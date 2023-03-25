@@ -2,8 +2,7 @@ import Navbar from '../../components/Navbar';
 import TablePaginationActions from '../../components/TablePaginationActions';
 import Button from '@mui/material/Button';
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
+
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -15,11 +14,6 @@ import TableFooter from '@mui/material/TableFooter';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
 
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -86,8 +80,9 @@ function EditTopicDomains() {
 
       <Navbar />
 
-      <TopTabDomains />
+    
       <TablePaginationActions/>
+      <TopTabDomains />
       <Box
         sx={{
           padding: '20px',

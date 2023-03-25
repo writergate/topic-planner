@@ -81,8 +81,9 @@ function EditArticleTypes() {
 
       <Navbar />
 
-      <TopTab />
+ 
       <TablePaginationActions/>
+      <TopTab />
       <Box
         sx={{
           padding: '20px',
