@@ -49,8 +49,6 @@ function Templates() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         height: '500px',
-
-                        // bgcolor: 'rgba(192, 192, 192, 0.6)', //red, green, and blue values, and the fourth parameter (0.5) is the alpha value.
                         flexDirection: 'column'
                     }}
                 >

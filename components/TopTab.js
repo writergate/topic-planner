@@ -10,10 +10,12 @@ import EditOffIcon from '@mui/icons-material/EditOff';
 
 
 export default function TopTab() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(-1);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    if (newValue !== -1 && value !== newValue) {
+      setValue(newValue);
+    }
   };
 
   const router = useRouter();
@@ -44,9 +46,7 @@ export default function TopTab() {
           <Tabs
             value={value}
             onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="scrollable auto tabs example"
+            
           >
             <Tab
               label="Create"

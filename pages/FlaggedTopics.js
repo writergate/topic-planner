@@ -43,9 +43,9 @@ export default function FlaggedTopics() {
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [showClearAlert, setClearAlert] = React.useState(false);
+  const [showClearAlert, setClearAlert] = React.useState(null);
   const [deletedRowId, setDeletedRowId] = useState(null);
-  const [showKeepAlert, setKeepAlert] = React.useState(false);
+  const [showKeepAlert, setKeepAlert] = React.useState(null);
   const [keepRowId, setKeepRowId] = useState(null);
 
 

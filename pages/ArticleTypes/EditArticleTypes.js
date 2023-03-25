@@ -112,7 +112,7 @@ function EditArticleTypes() {
               // and close the dialog
               setOpenDialog(false);
             }} color="primary">
-              Save
+             Update
             </Button>
           </DialogActions>
         </Dialog>
