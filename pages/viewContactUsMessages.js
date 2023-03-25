@@ -26,6 +26,7 @@ export async function getStaticProps() {
   return { props: { messages } };
 }
 
+
 function TablePaginationActions(props) {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
@@ -95,20 +96,19 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-/*function LoadMessage(item) {
-  const router = useRouter();
-  React.useEffect(()=> {
-  router.push({
-    pathname: "/viewContactUsMessage/[prop]",
-    query: { prop: item },
-  });})  
-  
-}*/
-
 export default function ViewContactUsMessages({ messages }) {
-  const rows = messages.messages;
+  let msgs = sort_by_key(messages.messages,"savedAt");
+  const rows = msgs;
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  function sort_by_key(array, key) {
+    return array.sort(function (a, b) {
+      var x = a[key];
+      var y = b[key];
+      return x > y ? -1 : x < y ? 1 : 0;
+    });
+  }
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -156,15 +156,17 @@ export default function ViewContactUsMessages({ messages }) {
                 <TableCell>{row.email}</TableCell>
                 <TableCell>
                   <Button variant="contained">
-                    <Link href={{
-                        pathname:'viewContactUsMessage',
-                        query:{
-                            itemName:row.name,
-                            itemEmail:row.email,
-                            itemMessage:row.message
-                        }
-                    }}>
-                    View Message
+                    <Link
+                      href={{
+                        pathname: "viewContactUsMessage",
+                        query: {
+                          itemName: row.name,
+                          itemEmail: row.email,
+                          itemMessage: row.message,
+                        },
+                      }}
+                    >
+                      View Message
                     </Link>
                   </Button>
                 </TableCell>
