@@ -1,5 +1,4 @@
 
-
 import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -55,17 +54,14 @@ function Templates() {
                         flexDirection: 'column'
                     }}
                 >
-                    <StyledButton variant="contained" color="secondary" onClick={handleCreateButtonClick} sx={{ width: '250px', marginRight: '10px', ':hover': { color: 'black', backgroundColor: 'white' } }} >
+                    <StyledButton variant="contained"  color="secondary" onClick={handleCreateButtonClick} sx={{ width: '250px',fontWeight:'600', ':hover': { color: '#030d28', backgroundColor: 'white' } }} >
                         Create New Topic Templates
                     </StyledButton>
                     <Box sx={{ my: 2 }} />
-                    <StyledButton variant="contained" color="secondary" onClick={handleEditButtonClick} sx={{ width: '250px', ':hover': { color: 'black', backgroundColor: 'white' } }} >
+                    <StyledButton variant="contained" color="secondary" onClick={handleEditButtonClick} sx={{ width: '250px',fontWeight:'600' , ':hover': { color: '#030d28', backgroundColor: 'white'} }} >
                         Edit Topic Templates
                     </StyledButton>
                 </Box>
-
-
-
             </Box>
         </div>
     )
