@@ -1,18 +1,63 @@
 import styles from '../styles/article.module.css'
 import Image from 'next/image'
 import React from 'react'
+import Head from "next/Head"
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {TextField, IconButton, InputAdornment} from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import CommentIcon from '@mui/icons-material/Comment';
+import ShareIcon from '@mui/icons-material/Share';
+import DownloadIcon from '@mui/icons-material/Download';
+
 
 function Article(){
 return(
+
         <div>
+            <Head>
+                <title>Article</title>
+                <meta name="description" content="created by team"  />
+
+                <link rel="icon" href="/favicon.ico"/> 
+            </Head>
+           
             <div className={styles.box1}>
-                <div className={styles.img1}>
-                    <Image src="/../public/user.png" width="45" height="45" alt='user'/>
-                </div>
+            <AppBar position="fixed" sx={{backgroundColor: '#0082e6'}}>
+                    <Toolbar>
+                        <Typography variant="h6"  >
+                            (our logo)
+                        </Typography>
+                        <div style={{ flexGrow: 1 }}></div>
+                        <IconButton
+                        size="large"
+                        color="white"
+                        aria-label="search"
+                        >
+                        </IconButton>
+                        <IconButton
+                        size="large"
+                        color="white" // this don't work
+                        aria-label="notifications"
+                        >
+                        <NotificationsIcon />
+                        </IconButton>
+                        <IconButton
+                        size="large"
+                        color="white" // this don't work
+                        aria-label="account"
+                        >
+                        <AccountCircleIcon />
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
             </div>
             <div className={styles.box2}>
-                <div className={styles.img2}>
-                    <Image src="/../public/user.png" width="60" height="60" alt='user'/>
+                <div>
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" 
+                    sx={{ width: 60, height: 60,marginLeft: '70px'}}/>
                 </div>
                 <div className={styles.innerBox}>
                     <h1>Article Writer's Name</h1>
@@ -29,15 +74,35 @@ return(
                 <div className={styles.articleBody}></div>
             </div>
             <div className={styles.box4}>
-                <div className={styles.like}><Image src="/../public/hands-clapping.png" width="50" height="40" alt='like'/> <p>100</p></div>
-                <div className={styles.comment}><Image src="/../public/comment.png" width="35" height="35" alt='comment'/> <p>10</p></div>
-                <div className={styles.download}><Image src="/../public/download.png" width="35" height="35" alt='download'/></div>
-                <div className={styles.share}><Image src="/../public/share.png" width="35" height="35" alt='share'/></div>
+                <div className={styles.like}>
+                    <IconButton>
+                            <ThumbUpIcon />
+                    </IconButton> 
+                    <p>100</p>
+                </div>
+                <div className={styles.comment}>
+                    <IconButton>
+                            <CommentIcon />
+                    </IconButton> 
+                    <p>10</p>
+                </div>
+                <div className={styles.download}>
+                    <IconButton>
+                            <DownloadIcon />
+                    </IconButton> 
+                </div>
+                <div className={styles.share}>
+                    <IconButton>
+                            <ShareIcon />
+                    </IconButton> 
+                </div>
             </div>
             <div className={styles.box5}>
-                <div className={styles.img3}>
-                    <Image src="/../public/user.png" width="45" height="45" alt='user'/>
-                    <div  ><input type="text" className={styles.text}/></div>
+                <div className={styles.img3} style={{display: 'flex'}}>
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" 
+                    sx={{ width: 40, height: 40, marginLeft:'70px',padding:0}}/>
+                    <div  className={styles.text}><TextField id="standard-basic"  variant="standard"  
+                     sx={{ mt:1,ml:1, width: '100ch',fontSize: '16px'}} /></div>
                 </div>
             </div>
         </div>
