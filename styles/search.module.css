@@ -1,0 +1,24 @@
+.outer{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.navbar{
+    
+    height: 10vh;
+    width: 100vw;
+}
+
+.searchBox{
+   
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articleBoxOuter{
+    overflow: hidden;
+    width: 100vw;
+    
+}

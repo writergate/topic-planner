@@ -121,7 +121,7 @@ export default Navbar
 
 
 //Permanent drawer
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import * as React from 'react';
@@ -142,11 +142,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import SpeedIcon from '@mui/icons-material/Speed';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import CreateIcon from '@mui/icons-material/Create';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import BadgeIcon from '@mui/icons-material/Badge';
-import InfoIcon from '@mui/icons-material/Info';
+import TopicIcon from '@mui/icons-material/Topic';
+import ArticleIcon from '@mui/icons-material/Article';
+import FlagIcon from '@mui/icons-material/Flag';
 import GroupIcon from '@mui/icons-material/Group';
 import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@mui/material/IconButton';
@@ -159,17 +159,31 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const drawerWidth = 220;  //width for the drawer we can change this
 const AppBarWidth = 64;
 const iconMap = {
-  'Dashboard': <SpeedIcon sx={{ color: 'white' }} />,
+  'Dashboard': < DashboardIcon sx={{ color: 'white' }} />,
   'Templates': <CreateIcon sx={{ color: 'white' }} />,
-  'Article Types': <BadgeIcon sx={{ color: 'white' }} />,
-  'Topic Domains': <MenuBookIcon sx={{ color: 'white' }} />,
-  'Flagged Topics': <InfoIcon sx={{ color: 'white' }} />,
+  'Article Types': < ArticleIcon sx={{ color: 'white' }} />,
+  'Topic Domains': <TopicIcon sx={{ color: 'white' }} />,
+  'Flagged Topics': <FlagIcon sx={{ color: 'white' }} />,
   'User Roles': <GroupIcon sx={{ color: 'white' }} />,
   'Generate Reports': <CheckIcon sx={{ color: 'white' }} />
 };
 
 export default function NavBar() {
   const router = useRouter();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    // Update the selected index whenever the route changes
+    const path = router.pathname;
+    const index = ['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].findIndex((text) => path.includes(text.replace(' ', '')));
+    setSelectedIndex(index);
+  }, [router.pathname]);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -177,34 +191,52 @@ export default function NavBar() {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: '#0082e6'
+          backgroundColor: '#4f4fcb'
           //width:`calc(100% - ${drawerWidth}px)`,
           // ml: `${drawerWidth}px`,
         }}
       >
         <Toolbar>
 
-          <Typography variant="h6" noWrap component="div">
-            Admin (our logo)
+          <Typography variant="h6" noWrap component="div"
+            sx={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: '#030d28',
+              textDecoration: 'none',
+            }}>
+            Admin
+          </Typography>
+          <Typography variant="h6" noWrap component="div"
+            sx={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              paddingLeft: '10px'
+            }}>
+            LOGO
           </Typography>
           <div style={{ flexGrow: 1 }}></div>
           <IconButton
             size="large"
-            color="white"
+            color="inherit"
             aria-label="search"
           >
             < MailIcon />
           </IconButton>
           <IconButton
             size="large"
-            color="white" // this don't work
+            color="inherit"
             aria-label="notifications"
           >
             <NotificationsIcon />
           </IconButton>
           <IconButton
             size="large"
-            color="white" // this don't work
+            color="inherit"
             aria-label="account"
           >
             <AccountCircleIcon />
@@ -222,7 +254,7 @@ export default function NavBar() {
             width: drawerWidth,
             boxSizing: 'border-box',
             marginTop: `calc(${AppBarWidth}px)`, //marginTop:'64px',
-            backgroundColor: '#2c3e50',
+            backgroundColor: '#060552'
           },
         }}
         variant="permanent"  // making drawer permenant
@@ -232,35 +264,45 @@ export default function NavBar() {
 
 
 
-        <List sx={{ overflow: 'hidden' }}>
+<List sx={{ overflow: 'hidden' }}>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
-            <ListItem key={text} >
-              <Link href={`/${text.replace(' ', '')}`} passHref >
-                <ListItemButton sx={{ color: 'white', padding: '8px 1px', width: drawerWidth, ':hover': { color: 'black', backgroundColor: 'white' }, '&:hover .MuiSvgIcon-root': { color: 'black' } }}>
+            <ListItem key={text}>
+              <Link href={`/${text.replace(' ', '')}`} passHref>
+                <ListItemButton
+                  selected={selectedIndex === index}
+                  onClick={(event) => handleListItemClick(event, index)}
+                  sx={{
+                    color: 'white',
+                    padding: '8px 1px',
+                    width: drawerWidth,
+                    ':hover': {
+                      color: 'inherit',
+                      backgroundColor: '#5f71f3',
+                      '& .MuiSvgIcon-root': {
+                        color: 'black',
+                      },
+                    },
+                    
+                  }}
+                  
+                >
                   <ListItemIcon>
                     {iconMap[text]}
                   </ListItemIcon>
                   <ListItemText primary={text} />
+
                 </ListItemButton>
 
               </Link>
             </ListItem>
+
+
           ))}
         </List>
 
       </Drawer>
 
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, backgroundColor: 'background.default', p: 3 }} //p means padding
-      >
-        <Toolbar />
-        {/*start no need*/}
-        <Typography paragraph>
 
-        </Typography>
-        {/*End no need*/}
-      </Box>
     </Box>
   );
 }
