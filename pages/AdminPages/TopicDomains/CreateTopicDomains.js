@@ -1,12 +1,10 @@
-import Navbar from '../../components/Navbar';
-
+import Navbar from '../../../components/Navbar';
+import TopTabDomains from '../../../components/TopTabDomains';
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
+
 import Box from '@mui/material/Box';
-import TopTabDomains from '../../components/TopTab';
-import { Paper, Grid, Typography, Button, TextField, colors } from "@mui/material";
-import Container from "@mui/material/Container";
+import { Button, TextField } from "@mui/material";
+
 function CreateTopicDomains() {
 
   return (
