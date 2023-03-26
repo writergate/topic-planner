@@ -1,0 +1,21 @@
+.outer{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navBar{
+    width: 100vw;
+    height: 10vh;
+    border: 1px solid red;
+}
+
+.introBox{
+    width: 100vw;
+    height: 50vh;
+    border: 1px solid red;
+}
+
+.trends{
+    width: 100vw;
+    border: 1px solid red;
+}
