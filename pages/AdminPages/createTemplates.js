@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import Box from '@mui/material/Box';
 
 function createTemplates(){

@@ -1,6 +1,6 @@
-import Navbar from '../../components/Navbar';
-import TablePaginationActions from '../../components/TablePaginationActions';
-import TopTab from '../../components/TopTab';
+import Navbar from '../../../components/Navbar';
+import TopTab from '../../../components/TopTab';
+import TablePaginationActions from '../../../components/TablePaginationActions';
 
 import * as React from 'react';
 import { useState } from 'react';

@@ -143,7 +143,7 @@ export default function NavBar() {
 <List sx={{ overflow: 'hidden' }}>
           {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
             <ListItem key={text}>
-              <Link href={`/${text.replace(' ', '')}`} passHref>
+              <Link href={`/AdminPages/${text.replace(' ', '')}`} passHref>
                 <ListItemButton
                   selected={selectedIndex === index}
                   onClick={(event) => handleListItemClick(event, index)}

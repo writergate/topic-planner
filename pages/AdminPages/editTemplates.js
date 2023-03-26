@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import React, { useState } from 'react';
 import AWS from 'aws-sdk'; // import AWS SDK
 

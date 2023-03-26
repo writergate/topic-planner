@@ -1,8 +1,8 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import TablePaginationActions from '../components/TablePaginationActions';
+import Navbar from '../../components/Navbar';
+import TablePaginationActions from '../../components/TablePaginationActions';
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -17,6 +17,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
+
 
 function createData(id, name) {
   return { id, name };
@@ -43,9 +44,9 @@ export default function FlaggedTopics() {
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [showClearAlert, setClearAlert] = React.useState(null);
+  const [showClearAlert, setClearAlert] = React.useState(false);
   const [deletedRowId, setDeletedRowId] = useState(null);
-  const [showKeepAlert, setKeepAlert] = React.useState(null);
+  const [showKeepAlert, setKeepAlert] = React.useState(false);
   const [keepRowId, setKeepRowId] = useState(null);
 
 

@@ -1,12 +1,11 @@
-
 import { useState } from 'react';
-import Navbar from '../../components/Navbar';
-import TopTabDomains from '../../components/TopTabDomains';
+import Navbar from '../../../components/Navbar';
+import TopTab from '../../../components/TopTab';
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
 import Image from 'next/image'
 
-function TopicDomains(){
+function ArticleTypes() {
   const [tabsOpen, setTabsOpen] = useState(false);
 
   const handleTabsOpen = () => {
@@ -20,7 +19,7 @@ function TopicDomains(){
   return (
     <div>
       <Navbar />
-      <TopTabDomains onTabsOpen={handleTabsOpen} onTabsClose={handleTabsClose} />
+      <TopTab onTabsOpen={handleTabsOpen} onTabsClose={handleTabsClose} />
       <Box
         sx={{
           padding: '20px',
@@ -34,7 +33,7 @@ function TopicDomains(){
         }}
       >
         <Typography variant="h6" gutterBottom sx={{color:'#d5d7e7', fontWeight: 600,letterSpacing: '.1rem'}}> 
-         Choose to Edit or Create Topic Domains
+         Choose to Edit or Create Article Types
           </Typography>
         <Box sx={{ maxWidth: { xs: 320, sm: 480 }, backgroundColor: '##1b1155' }}>
         
@@ -50,5 +49,4 @@ function TopicDomains(){
   );
 }
 
-export  default TopicDomains;
-
+export default ArticleTypes;

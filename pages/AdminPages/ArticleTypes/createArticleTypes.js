@@ -1,9 +1,9 @@
-import Navbar from '../../components/Navbar';
-
+import Navbar from '../../../components/Navbar';
+import TopTab from '../../../components/TopTab';
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
-import TopTab from '../../components/TopTab';
+
 import {  Button, TextField } from "@mui/material";
 import Container from "@mui/material/Container";
 

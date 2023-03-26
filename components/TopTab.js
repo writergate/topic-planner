@@ -22,12 +22,12 @@ export default function TopTab() {
 
   const handleCreateArticleType = () => {
     console.log('Tab1 clicked');
-    router.push('/ArticleTypes/createArticleTypes');
+    router.push('/AdminPages/ArticleTypes/createArticleTypes');
   };
 
   const handleEditArticleType = () => {
     console.log('Tab 2 clicked');
-    router.push('/ArticleTypes/EditArticleTypes');
+    router.push('/AdminPages/ArticleTypes/EditArticleTypes');
   };
 
   return (

@@ -20,13 +20,13 @@ export default function TopTab() {
 
   const handleCreateTopicDomains = () => {
 
-    router.push('/TopicDomains/CreateTopicDomains');
+    router.push('/AdminPages/TopicDomains/CreateTopicDomains');
     console.log('Tab1 clicked');
   };
 
   const handleEditTopicDomains = () => {
 
-    router.push('/TopicDomains/EditTopicDomains');
+    router.push('/AdminPages/TopicDomains/EditTopicDomains');
     console.log('Tab 2 clicked');
   };
 

@@ -1,5 +1,6 @@
-import Navbar from '../../components/Navbar';
-import TablePaginationActions from '../../components/TablePaginationActions';
+import Navbar from '../../../components/Navbar';
+import TopTabDomains from '../../../components/TopTabDomains';
+import TablePaginationActions from '../../../components/TablePaginationActions';
 import Button from '@mui/material/Button';
 import * as React from 'react';
 
@@ -21,7 +22,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 
-import TopTabDomains from '../../components/TopTabDomains';
+
 
 
 
