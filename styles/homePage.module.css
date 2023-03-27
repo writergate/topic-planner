@@ -5,8 +5,11 @@
 
 .navBar{
     width: 100vw;
-    height: 10vh;
+    height: 12vh;
     border: 1px solid red;
+    display: flex;
+    align-items: center;
+    
 }
 
 .introBox{
