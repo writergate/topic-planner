@@ -1,3 +1,33 @@
+const AWS = require('aws-sdk');
+const docClient = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event) => {
+  try {
+    const params = {
+      TableName: 'topicDom-type-template',
+      ProjectionExpression: 'topicDomainId, topicDomainName'
+    };
+    const data = await docClient.scan(params).promise();
+    const items = data.Items;
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(items)
+    };
+  } catch (err) {
+    return {
+      statusCode: 400,
+      error: `Could not fetch topics: ${err}`
+    };
+  }
+};
+
+
+
+
+/*Access key : AKIAWXE5Y3RWCQE6JCOT
+secret key : 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
+
 export function getTopics() {
     return [
       { id: 1, name: 'Topic 1', description: 'This is the first topic' },
@@ -17,4 +47,4 @@ export function getTopics() {
       { id: 15, name: 'Topic 15', description: 'This is the fifteenth topic' },
     ];
   }
-  
+  */
