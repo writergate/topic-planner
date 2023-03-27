@@ -1,3 +1,95 @@
+import React from 'react';
+import Navbar from '../../../components/Navbar';
+import TopTab from '../../../components/TopTab';
+import Button from '@mui/material/Button';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,Box } from '@mui/material';
+
+
+export const getStaticProps = async () => {
+  const response = await fetch('https://vrscop1u3m.execute-api.us-east-1.amazonaws.com/templatesProject/templates');
+  const data = await response.json();
+  return {
+    props: { templates: data.templates }
+  };
+};
+function EditTopicDomains ({ templates }) {
+
+
+  const topicDomains = [...new Set(templates.map(template => template.topicDomain))];
+
+  const getTemplateIdsByArticleType = (topicDomain) => {
+    const matchingTemplates = templates.filter(template => template.topicDomain === topicDomain);
+    return matchingTemplates.map(template => template.templateId);
+  }
+
+  return (
+    <div>
+    <Navbar />
+     
+    <TopTab />
+    <Box
+      sx={{
+        padding: '20px',
+        marginTop: '2px',
+        marginLeft: '300px',
+        marginRight: '260px',
+        backgroundColor: '#242444',
+        color: 'white',
+      }}
+    >
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 600 }} aria-label="Topic-Domain-Table">
+        <TableHead >
+
+          <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Template Id</TableCell>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic Domain</TableCell>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
+          </TableRow>
+
+        </TableHead>
+        <TableBody>
+          {topicDomains.map(topicDomain => (
+            <TableRow key={topicDomain}>
+              <TableCell component="th" scope="row">{getTemplateIdsByArticleType(topicDomain).join(', ')}</TableCell>
+              <TableCell style={{ width: 260 }} align="Left">
+                {topicDomain}
+              </TableCell>
+              <TableCell>
+                <Button variant="contained" color="primary" >
+                  Edit
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    </Box>
+    </div>
+  );
+};
+
+
+
+export default EditTopicDomains;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 import { useState, useEffect } from 'react';
@@ -179,6 +271,7 @@ function EditTopicDomains() {
 export default EditTopicDomains;
 */
 
+/*
 import Navbar from '../../../components/Navbar';
 import TopTabDomains from '../../../components/TopTabDomains';
 
@@ -451,4 +544,4 @@ export default EditTopicDomains;
         </table>
         
 
-            */}
+            */

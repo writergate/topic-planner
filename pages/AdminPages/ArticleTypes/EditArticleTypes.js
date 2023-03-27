@@ -1,91 +1,79 @@
-
 import React from 'react';
-
 import Navbar from '../../../components/Navbar';
 import TopTab from '../../../components/TopTab';
-import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableHead from '@mui/material/TableHead';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableFooter from '@mui/material/TableFooter';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,Box } from '@mui/material';
 
-//import { v4 as uuidv4 } from 'uuid'; // import the uuid package
 
 export const getStaticProps = async () => {
   const response = await fetch('https://vrscop1u3m.execute-api.us-east-1.amazonaws.com/templatesProject/templates');
   const data = await response.json();
-  //console.log(data);
   return {
     props: { templates: data.templates }
   };
 };
-function EditArticleTypes({ templates })  {
-  const articleType = new Set();
-  
-  templates.forEach(template => {
-    articleType.add(template.articleType );
-  });
-  const articleTypesArray = Array.from(articleType);
+const EditArticleTypes = ({ templates }) => {
 
-  console.log(articleTypesArray);
-  
+
+  const articleTypes = [...new Set(templates.map(template => template.articleType))];
+
+  const getTemplateIdsByArticleType = (articleType) => {
+    const matchingTemplates = templates.filter(template => template.articleType === articleType);
+    return matchingTemplates.map(template => template.templateId);
+  }
+
   return (
     <div>
-      <Navbar />
+    <Navbar />
      
-      <TopTab/>
-     <Box
-       sx={{
-         padding: '20px',
-         marginTop: '2px',
-         marginLeft: '300px',
-         marginRight: '260px',
-         backgroundColor: '#242444',
-         color: 'white',
-       }}
-     >
-       <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 600 }} aria-label="Topic-Domain-Table">
-            <TableHead >
+    <TopTab />
+    <Box
+      sx={{
+        padding: '20px',
+        marginTop: '2px',
+        marginLeft: '300px',
+        marginRight: '260px',
+        backgroundColor: '#242444',
+        color: 'white',
+      }}
+    >
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 600 }} aria-label="Topic-Domain-Table">
+        <TableHead >
 
-              <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
-              
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type</TableCell>
-                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
-              </TableRow>
+          <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Template Id</TableCell>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Article Type</TableCell>
+            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
+          </TableRow>
 
-            </TableHead>
-            <TableBody>
-            {articleTypesArray.map((articleType, index) => (
-                <TableRow key={index}>
-                  
-                  <TableCell style={{ width: 260 }} align="Left">
-                  {articleType}
-                  </TableCell>
-                  <TableCell>
-                    <Button variant="contained" color="primary">
-                      Edit
-                    </Button>
-                  </TableCell>
-
-                </TableRow>
-            ))}
-            </TableBody>
-           </Table>
-           </TableContainer>
-    
+        </TableHead>
+        <TableBody>
+          {articleTypes.map(articleType => (
+            <TableRow key={articleType}>
+              <TableCell component="th" scope="row">{getTemplateIdsByArticleType(articleType).join(', ')}</TableCell>
+              <TableCell style={{ width: 260 }} align="Left">
+                {articleType}
+              </TableCell>
+              <TableCell>
+                <Button variant="contained" color="primary" onClick={() => handleEditButtonClick(row.topicDomainId)}>
+                  Edit
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
     </Box>
-  </div>
+    </div>
   );
 };
 
+
+
 export default EditArticleTypes;
+
 
 {/*
 import Navbar from '../../../components/Navbar';
