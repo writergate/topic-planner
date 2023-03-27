@@ -37,8 +37,8 @@ const AppBarWidth = 64;
 const iconMap = {
   'Dashboard': < DashboardIcon sx={{ color: 'white' }} />,
   'Templates': <CreateIcon sx={{ color: 'white' }} />,
-  'Article Types': < ArticleIcon sx={{ color: 'white' }} />,
   'Topic Domains': <TopicIcon sx={{ color: 'white' }} />,
+  'Article Types': < ArticleIcon sx={{ color: 'white' }} />,
   'Flagged Topics': <FlagIcon sx={{ color: 'white' }} />,
   'User Roles': <GroupIcon sx={{ color: 'white' }} />,
   'Generate Reports': <CheckIcon sx={{ color: 'white' }} />
@@ -51,7 +51,7 @@ export default function NavBar() {
   useEffect(() => {
     // Update the selected index whenever the route changes
     const path = router.pathname;
-    const index = ['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].findIndex((text) => path.includes(text.replace(' ', '')));
+    const index = ['Dashboard', 'Templates', 'Topic Domains','Article Types',  'Flagged Topics', 'User Roles', 'Generate Reports'].findIndex((text) => path.includes(text.replace(' ', '')));
     setSelectedIndex(index);
   }, [router.pathname]);
 
@@ -133,7 +133,7 @@ export default function NavBar() {
             backgroundColor: '#060552'
           },
         }}
-        variant="permanent"  // making drawer permenant
+        variant="permanent"  // making drawer permanent
         anchor="left"   //drawer to left
       >
 
@@ -141,7 +141,7 @@ export default function NavBar() {
 
 
 <List sx={{ overflow: 'hidden' }}>
-          {['Dashboard', 'Templates', 'Article Types', 'Topic Domains', 'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
+          {['Dashboard', 'Templates','Topic Domains', 'Article Types',  'Flagged Topics', 'User Roles', 'Generate Reports'].map((text, index) => (
             <ListItem key={text}>
               <Link href={`/AdminPages/${text.replace(' ', '')}`} passHref>
                 <ListItemButton

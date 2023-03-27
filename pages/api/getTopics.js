@@ -25,8 +25,7 @@ exports.handler = async (event) => {
 
 
 
-/*Access key : AKIAWXE5Y3RWCQE6JCOT
-secret key : 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
+/*
 
 export function getTopics() {
     return [
