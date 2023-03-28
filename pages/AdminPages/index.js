@@ -9,7 +9,7 @@ function Home() {
     <div className="container">
     
     <Head>
-        <title>Create Admin Page</title>
+        <title>Admin Page </title>
         <meta name="description" content="created by team"  />
 
         <link rel="icon" href="/favicon.ico"/> 

@@ -56,7 +56,7 @@ const EditArticleTypes = ({ templates }) => {
                 {articleType}
               </TableCell>
               <TableCell>
-                <Button variant="contained" color="primary" onClick={() => handleEditButtonClick(row.topicDomainId)}>
+                <Button variant="contained" color="primary" >
                   Edit
                 </Button>
               </TableCell>

@@ -53,7 +53,7 @@ export default function NavBar() {
     const path = router.pathname;
     const index = ['Dashboard', 'Templates', 'Topic Domains','Article Types',  'Flagged Topics', 'User Roles', 'Generate Reports'].findIndex((text) => path.includes(text.replace(' ', '')));
     setSelectedIndex(index);
-  }, [router.pathname]);
+  }, [router.pathname]); //only be executed if router.pathname changes between renders.
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -158,9 +158,7 @@ export default function NavBar() {
                         color: 'black',
                       },
                     },
-                    
                   }}
-                  
                 >
                   <ListItemIcon>
                     {iconMap[text]}
@@ -171,13 +169,9 @@ export default function NavBar() {
 
               </Link>
             </ListItem>
-
-
           ))}
         </List>
-
       </Drawer>
-
     </Box>
   );
 }

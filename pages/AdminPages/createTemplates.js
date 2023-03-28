@@ -33,6 +33,7 @@ function createTemplates() {
           padding: '20px',
           marginLeft: '300px',
           marginRight: '260px',
+          marginTop:"64px",
           backgroundColor: '#1b1155',
           color: 'white',
           display: 'flex',
