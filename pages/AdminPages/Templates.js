@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import NavBar from '../components/Navbar';
+import NavBar from '../../components/Navbar';
 
 const StyledButton = styled(Button)({
     textTransform: 'none', // set textTransform to none to prevent auto-uppercase
@@ -13,11 +13,11 @@ function Templates() {
     const router = useRouter();
     const handleCreateButtonClick = () => {
         console.log('Button 1 clicked');
-        router.push('/createTemplates');
+        router.push('/AdminPages/createTemplates');
     };
 
     const handleEditButtonClick = () => {
-        router.push('/editTemplates');
+        router.push('/AdminPages/editTemplates');
     };
 
     return (
@@ -49,8 +49,6 @@ function Templates() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         height: '500px',
-
-                        // bgcolor: 'rgba(192, 192, 192, 0.6)', //red, green, and blue values, and the fourth parameter (0.5) is the alpha value.
                         flexDirection: 'column'
                     }}
                 >

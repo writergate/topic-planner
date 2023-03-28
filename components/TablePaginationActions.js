@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme }  from "@mui/material/styles";
-
 import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -30,7 +30,8 @@ function TablePaginationActions(props) {
   };
 
   return (
-    <div style={{flexShrink: 0, marginLeft: theme.spacing(2.5)}}>
+    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
+
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
@@ -59,11 +60,16 @@ function TablePaginationActions(props) {
       >
         {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
-      
-    </div>
+    </Box>
   );
 }
 
+TablePaginationActions.propTypes = {
+  count: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  rowsPerPage: PropTypes.number.isRequired,
+};
 
 
 export default TablePaginationActions;
