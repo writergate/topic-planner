@@ -121,8 +121,11 @@ function EditTemplates({ templates }) {
   };
 
   return (
-    <div>
+    <div >
+       <Box sx={{ backgroundColor: '#e6e6ee' }}>
       <Navbar />
+     
+
 
       <Box
         sx={{
@@ -151,7 +154,7 @@ function EditTemplates({ templates }) {
               ).map(row => (
                 <TableRow key={row.templateId}>
                   <TableCell component="th" scope="row">{row.templateId}</TableCell>
-                  <TableCell style={{ width: 260 }} align="Left">
+                  <TableCell style={{ width: 260 }} >
                     {row.templateContent}
                   </TableCell>
                   <TableCell>
@@ -192,6 +195,7 @@ function EditTemplates({ templates }) {
           </Table>
         </TableContainer>
 
+      </Box>
       </Box>
     </div>
   );

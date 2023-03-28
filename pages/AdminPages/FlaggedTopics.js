@@ -141,7 +141,7 @@ export default function FlaggedTopics() {
                   <TableCell component="th" scope="row">
                     {row.id}
                   </TableCell>
-                  <TableCell style={{ width: 250 }} align="Left">
+                  <TableCell style={{ width: 250 }} >
                     {row.name}
                   </TableCell>
                   <TableCell>

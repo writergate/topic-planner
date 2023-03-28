@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../../../components/Navbar';
-import TopTab from '../../../components/TopTab';
+import TopTabDomains from '../../../components/TopTabDomains';
 import Button from '@mui/material/Button';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,Box } from '@mui/material';
 
@@ -26,7 +26,7 @@ function EditTopicDomains ({ templates }) {
     <div>
     <Navbar />
      
-    <TopTab />
+    <TopTabDomains />
     <Box
       sx={{
         padding: '20px',
@@ -52,7 +52,7 @@ function EditTopicDomains ({ templates }) {
           {topicDomains.map(topicDomain => (
             <TableRow key={topicDomain}>
               <TableCell component="th" scope="row">{getTemplateIdsByArticleType(topicDomain).join(', ')}</TableCell>
-              <TableCell style={{ width: 260 }} align="Left">
+              <TableCell style={{ width: 260 }} >
                 {topicDomain}
               </TableCell>
               <TableCell>

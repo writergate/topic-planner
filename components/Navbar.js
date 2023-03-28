@@ -67,7 +67,7 @@ export default function NavBar() {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: '#4f4fcb'
+          backgroundColor: '#3934a1'
           //width:`calc(100% - ${drawerWidth}px)`,
           // ml: `${drawerWidth}px`,
         }}
@@ -79,7 +79,7 @@ export default function NavBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: '#030d28',
+              color: '#9399f7',
               textDecoration: 'none',
             }}>
             Admin
