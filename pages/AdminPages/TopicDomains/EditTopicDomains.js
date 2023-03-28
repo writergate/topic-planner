@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../../../components/Navbar';
 import TopTabDomains from '../../../components/TopTabDomains';
 import Button from '@mui/material/Button';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,Box } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box } from '@mui/material';
 
 
 export const getStaticProps = async () => {
@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
     props: { templates: data.templates }
   };
 };
-function EditTopicDomains ({ templates }) {
+function EditTopicDomains({ templates }) {
 
 
   const topicDomains = [...new Set(templates.map(template => template.topicDomain))];
@@ -24,48 +24,49 @@ function EditTopicDomains ({ templates }) {
 
   return (
     <div>
-    <Navbar />
-     
-    <TopTabDomains />
-    <Box
-      sx={{
-        padding: '20px',
-        marginTop: '2px',
-        marginLeft: '300px',
-        marginRight: '260px',
-        backgroundColor: '#242444',
-        color: 'white',
-      }}
-    >
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 600 }} aria-label="Topic-Domain-Table">
-        <TableHead >
+      <Navbar />
 
-          <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
-            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Template Id</TableCell>
-            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic Domain</TableCell>
-            <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
-          </TableRow>
+      <TopTabDomains />
+      <Box
+        sx={{
+          padding: '20px',
+          marginTop: '2px',
+          marginLeft: '300px',
+          marginRight: '260px',
+          backgroundColor: '#242444',
+          color: 'white',
+        }}
+      >
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 600 }} aria-label="Topic-Domain-Table">
+            <TableHead >
 
-        </TableHead>
-        <TableBody>
-          {topicDomains.map(topicDomain => (
-            <TableRow key={topicDomain}>
-              <TableCell component="th" scope="row">{getTemplateIdsByArticleType(topicDomain).join(', ')}</TableCell>
-              <TableCell style={{ width: 260 }} >
-                {topicDomain}
-              </TableCell>
-              <TableCell>
-                <Button variant="contained" color="primary" >
-                  Edit
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-    </Box>
+              <TableRow sx={{ backgroundColor: '#b3b3b3' }}>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Topic Domain</TableCell>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Template Id s</TableCell>
+                <TableCell sx={{ fontSize: '1.1rem', color: 'white' }}>Edit</TableCell>
+              </TableRow>
+
+            </TableHead>
+            <TableBody>
+              {topicDomains.map(topicDomain => (
+                <TableRow key={topicDomain}>
+                  <TableCell style={{ width: 260 }} >
+                    {topicDomain}
+                  </TableCell>
+                  <TableCell component="th" scope="row">{getTemplateIdsByArticleType(topicDomain).join(', ')}</TableCell>
+
+                  <TableCell>
+                    <Button variant="contained" color="primary" >
+                      Edit
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
     </div>
   );
 };

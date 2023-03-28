@@ -122,11 +122,9 @@ function EditTemplates({ templates }) {
 
   return (
     <div >
-       <Box sx={{ backgroundColor: '#e6e6ee' }}>
+      <Box sx={{ backgroundColor: '#e6e6ee' }}>
       <Navbar />
      
-
-
       <Box
         sx={{
           padding: '20px',
