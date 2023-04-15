@@ -5,30 +5,61 @@ import {
   DataGrid,
   GridEditSingleSelectCell,
   GridCellEditStopReasons,
+  gridClasses,
 } from '@mui/x-data-grid';
 import { randomPrice } from '@mui/x-data-grid-generator';
+import { Avatar } from '@mui/material';
+import moment from "moment";
+import Typography from '@mui/material/Typography'
+import UserActions from './userActions';
+
+
 
 const initialRows = [
   {
-    id: 1,
-    description: 'Light bill',
-    value: randomPrice(0, 1000),
-    type: 'Expense',
-    account: 'Utilities',
+    id:1,
+    photoURL: 1,
+    name: 'Vincent Hartman',
+    email: 'vincent@gmail.com',
+    role: 'Writer',
+    active: 1,
+    createdAt:new Date().getTime(),
+  },
+  {
+    id: 2,
+    photoURL: 1,
+    name: 'Autumn Bradford',
+    email: 'autumn@gmail.com',
+    role: 'Admin',
+    active: 1,
+    createdAt:new Date().getTime(),
   },
   {
     id: 3,
-    description: 'Order #5',
-    value: randomPrice(0, 1000),
-    type: 'Income',
-    account: 'Sales',
+    photoURL: 1,
+    name: 'Heaven Dorsey',
+    email: 'heaven@gmail.com',
+    role: 'Reader',
+    active: 1,
+    createdAt:new Date().getTime(),
   },
   {
     id: 4,
-    description: 'Google AdSense',
-    value: randomPrice(0, 1000),
-    type: 'Income',
-    account: 'Ads',
+    photoURL: 1,
+    name: 'Emanuel Stephens',
+    email: 'emanuel@gmail.com',
+    role: 'Reader',
+    active: 1,
+    createdAt:new Date().getTime(),
+  },
+  {
+    id: 5,
+    photoURL: 1,
+    name: 'Carlie Evans',
+    email: 'carlie@gmail.com',
+    role: 'Writer',
+    active: 1,
+    createdAt:new Date().getTime(),
   },
 ];
 
@@ -58,52 +89,67 @@ CustomTypeEditComponent.propTypes = {
 function userList() {
   const editingRow = React.useRef(null);
   const [rows, setRows] = React.useState(initialRows);
+  const [rowId, setRowId] = React.useState(null);
 
-  const columns = [
-    { field: 'description', headerName: 'Description', width: 160, editable: true },
+ 
+  const columns = React.useMemo( 
+    () =>
+    [
+    { 
+      field: 'photoURL',
+      headerName: 'Avatar', 
+      width: 100,
+      renderCell: (params) => <Avatar src={params.row.photoURL} />,
+      sortable: false,
+      filterable : false,
+    },
     {
-      field: 'value',
-      headerName: 'Value',
-      type: 'number',
+      field: 'name',
+      headerName: 'Name',
+      width: 170,
+      editable: true,
+    },
+    {
+      field: 'email',
+      headerName: 'Email',
+      width: 200,
+      editable: true,
+    },
+    {
+      field: 'role',
+      headerName: 'Role',
+      type: 'singleSelect',
+      valueOptions: ['Reader', 'Writer' , 'Admin'],
+      width: 100,
+      editable: true,
+    },
+    {
+      field: 'active',
+      headerName: 'Active',
+      type: 'boolean',
       width: 120,
       editable: true,
     },
     {
-      field: 'type',
-      headerName: 'Type',
-      type: 'singleSelect',
-      valueOptions: ['Income', 'Expense'],
-      width: 120,
+      field: 'createdAt',
+      headerName: 'Created At',
+      width: 200,
       editable: true,
-      renderEditCell: (params) => (
-        <CustomTypeEditComponent setRows={setRows} {...params} />
-      ),
+      renderCell: params=>moment(params.row.createdAt).format('YYYY-MM-DD HH:MM:SS'),
     },
     {
-      field: 'account',
-      headerName: 'Account',
-      type: 'singleSelect',
-      valueOptions: ({ row }) => {
-        if (!row) {
-          return [
-            'Sales',
-            'Investments',
-            'Ads',
-            'Taxes',
-            'Payroll',
-            'Utilities',
-            'Marketing',
-          ];
-        }
-
-        return row.type === 'Income'
-          ? ['Sales', 'Investments', 'Ads']
-          : ['Taxes', 'Payroll', 'Utilities', 'Marketing'];
-      },
-      width: 140,
-      editable: true,
+      field: 'actions',
+      headerName: 'Actions',
+      type:'actions',
+      renderCell: (params)=>( 
+        < UserActions {...{params, rowId , setRowId}} />
+    ),
     },
-  ];
+    
+    
+  ],[rowId]
+
+  );
 
   const handleCellEditStart = (params) => {
     editingRow.current = rows.find((row) => row.id === params.id) || null;
@@ -131,12 +177,16 @@ function userList() {
 
   return (
     <Box sx={{ width: '100%', height: 500 }}>
+      <Typography sx={{mb:3}}>
+        All Users | 30 total  . 2 inactive
+      </Typography>
       <DataGrid
         rows={rows}
         columns={columns}
         onCellEditStart={handleCellEditStart}
         onCellEditStop={handleCellEditStop}
         processRowUpdate={processRowUpdate}
+        onCellEditCommit = {(params)=>setRowId(params.id)}
       />
     </Box>
   );
