@@ -2,8 +2,11 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDemoData } from '@mui/x-data-grid-generator';
+import { NavigateBeforeRounded } from '@mui/icons-material';
+import Navbar from '../../../components/Navbar';
+import UserList from './userList';
 
-function UserList() {
+function UserListPage() {
   const [checkboxSelection, setCheckboxSelection] = React.useState(true);
 
   const { data } = useDemoData({
@@ -13,18 +16,16 @@ function UserList() {
   });
 
   return (
-    <div style={{ width: '100%' }}>
-      <Button
-        sx={{ mb: 2 }}
-        onClick={() => setCheckboxSelection(!checkboxSelection)}
-      >
-        Toggle checkbox selection
-      </Button>
-      <div style={{ height: 700 }}>
-        <DataGrid checkboxSelection={checkboxSelection} {...data} />
-      </div>
+   
+    <div style={{ width: '80%', 
+    marginTop:'1.5%',
+    marginLeft: '260px',
+    marginRight: '260px' }}>
+      <div> <Navbar /></div>
+      <div>< UserList /> </div>
+      
     </div>
   );
 }
 
-export default UserList;
+export default UserListPage;
