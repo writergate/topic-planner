@@ -55,6 +55,10 @@ export default function NavBar() {
     setSelectedIndex(index);
   }, [router.pathname]); //only be executed if router.pathname changes between renders.
 
+  useEffect(()=>{
+          selectedIndex
+}
+)
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };

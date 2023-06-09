@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>My Page</title>
+        <title>Admin Page</title>
       </Head>
       <Navbar />
 
