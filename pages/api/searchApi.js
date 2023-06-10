@@ -2,14 +2,10 @@ const handler = async(req, res) => {
 
     const method = 'GET';
     const {keyword} = req.query;
-    const url = `https://tgi5925rh9.execute-api.us-east-1.amazonaws.com/prod/search?searchString=${keyword}`;
+    const url = `https://6w0yznyace.execute-api.eu-north-1.amazonaws.com/prod/search?searchString=${keyword}`;
     const option = {
         method: method,
-        headers: {
-            'x-api-key': 'l8gOym14lu1fqC68Q7VxW1MqjqanRGqG58Mtl6ph'
-        },
-        
-
+    
     }
 
     // Set up CORS headers with options

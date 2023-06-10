@@ -5,29 +5,26 @@ import ArticleCard from '../../components/articleCard';
 
 
 function SearchArticleBox(props) {
-
         const url = `/api/searchApi?keyword=${props.keyword}`;
         const method = 'GET';
         const [data, setData] = useState([]);
-
+        const [isLoading, setLoading] = useState(false);
         const option = {
             method: method,
-            headers: {
-                'x-api-key': 'l8gOym14lu1fqC68Q7VxW1MqjqanRGqG58Mtl6ph'
-            },
             
         }
-
         useEffect(() => {
             const fetchData = async () => {
+            console.log("response1");
             try{
-                    const response  = await fetch(url,option);
+                    const response  = await fetch(url, option);
                     const finalData = await response.json();
                     setData(finalData);
-                    
+                    console.log("response");
             }catch(error){
 
                     console.error(error);
+                    console.log("responseee");
             }
            
           }
@@ -35,7 +32,7 @@ function SearchArticleBox(props) {
           
         }, [props.keyword]) 
 
-        console.log(data);
+       console.log(data);
 
         return (
             <div style={{marginTop:'20px', width:'100%'}}>
@@ -43,7 +40,7 @@ function SearchArticleBox(props) {
                     <Grid item xs={12}>
                         <Grid container justifyContent="center" spacing={3}>
                         {data.map((item) => (
-                            <Grid key={item.productId} item>
+                            <Grid key={item.ProductId} item>
                                 <ArticleCard name={item.productName} />
                             </Grid>
                         ))}
